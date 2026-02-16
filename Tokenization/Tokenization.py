@@ -1,7 +1,3 @@
-text = "I love programming"
-tokens = text.split()
-print(tokens)
-
 import h5py
 import pandas as pd
 from transformers import BertTokenizer
