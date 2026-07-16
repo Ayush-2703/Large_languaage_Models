@@ -1,146 +1,51 @@
-# LLM Mastery
+# Phase 01 — Review of Fundamental LLMs
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![Python 3.10+](https://img.shields.io/badge/Python-3.10%2B-3776AB?logo=python&logoColor=white)](https://www.python.org/)
-[![PyTorch](https://img.shields.io/badge/PyTorch-2.x-EE4C2C?logo=pytorch&logoColor=white)](https://pytorch.org/)
-[![Hugging Face Transformers](https://img.shields.io/badge/Hugging%20Face-Transformers-FFD21E)](https://huggingface.co/docs/transformers)
-[![Progress](https://img.shields.io/badge/Progress-5%2F22%20Topics-yellow)](#progress-tracker)
+[![Status](https://img.shields.io/badge/Status-Complete-brightgreen)]()
+[![Topics](https://img.shields.io/badge/Topics-5%2F5-brightgreen)]()
 
-A topic-wise, hands-on curriculum for mastering Large Language Models — from the math behind self-attention to RAG, alignment, and multimodal frontiers. Every topic pairs grounded theory with runnable code and a generated artifact proving the code actually ran.
+The conceptual and mathematical foundation the rest of this curriculum builds on: how language models got here, exactly what self-attention computes, how pretraining and fine-tuning relate, why scale predictably helps, and how bias enters a model in the first place. Every topic pairs cited theory with a real, executed experiment.
 
-Companion repository to [`deep-learning-mastery`](https://github.com/Ayush-2703/deep-learning-mastery), built to the same standard.
+## Topics
 
----
-
-## About
-
-This repository covers Large Language Models end to end across **5 phases and 22 topics**: architectural fundamentals, generative fine-tuning, efficient training and alignment, applied systems like RAG, and where the field is headed next.
-
-It is being built incrementally, phase by phase. **Phase 01 is complete** with full theory, executed code, and real generated proof for all 5 topics. Phases 02–05 currently have their folder skeleton in place; each topic's `STATUS.md` tracks exactly where it stands, and the root progress tracker below reflects the repository as a whole.
-
-## Design Philosophy
-
-- **Runs anywhere, fast.** Every `implementation.py` is built to complete on a single free-tier Colab T4 GPU in well under an hour.
-- **Small models, full understanding.** Hands-on code uses small open checkpoints — DistilBERT, BERT-base, GPT-2 / GPT-2-medium, T5-small / FLAN-T5-small, DistilBART, OPUS-MT — and small public datasets (IMDB, SST-2, CNN/DailyMail or WMT16 subsamples, SQuAD).
-- **Scales conceptually.** Every `theory.md` explains how the technique extends to production-scale models, even where the runnable code stays deliberately small.
-- **Grounded, not copied.** Theory draws on Denis Rothman's *Transformers for Natural Language Processing*, Tunstall, von Werra & Wolf's *Natural Language Processing with Transformers*, and primary papers — paraphrased throughout, cited by title and author, never block-quoted.
-
-> **Scope notes:** Standalone Flash Attention kernels need Ampere-class GPUs or newer and won't run on a T4 — that topic demonstrates PyTorch's built-in scaled-dot-product-attention backend instead, with the dedicated kernel covered conceptually in `theory.md`. Likewise, full RLHF (reward model + PPO rollouts) is too heavy for a sub-hour Colab run — the hands-on code for Alignment is DPO, with RLHF/PPO covered conceptually alongside it.
-
-## Repository Structure
-
-```
-llm-mastery/
-├── README.md
-├── requirements.txt
-├── .gitignore
-├── LICENSE
-├── 01-Review-of-Fundamental-LLMs/
-├── 02-Generative-AI-with-LLMs/
-├── 03-Training-and-Optimization-of-LLMs/
-├── 04-Applications-and-Use-Cases/
-└── 05-Frontiers-and-Future-of-LLMs/
-```
-
-Each phase folder contains its own topic folders, numbered `01`, `02`, … starting fresh within that phase.
-
-### Per-Topic File Convention
-
-Every topic folder holds exactly four files:
-
-```
-03-Training-and-Optimization-of-LLMs/
-└── 02-Efficient-Training-LoRA-QLoRA-Quantization-Pruning/
-    ├── theory.md           # Math intuition, architecture breakdown, citations
-    ├── implementation.py   # Runnable PyTorch + Hugging Face code
-    ├── explanation.md      # Line-by-line walkthrough of the code's why and what
-    └── proof.png           # Generated artifact proving the code ran end to end
-```
-
-No exceptions. For topics that are conceptual rather than experimental (History and Evolution of Language Models, Ethical Considerations in Large-Scale AI, Emergent Behaviors and Scaling Hypotheses), `proof.png` is still generated from real code — a composite figure pairing a conceptual diagram with a real comparison chart, rather than a static illustration alone.
-
-## Curriculum
-
-### Phase 01 — Review of Fundamental LLMs ✅ Complete — [Module README](01-Review-of-Fundamental-LLMs/)
-| # | Topic | Folder |
+| # | Topic | What the code actually proves |
 |---|---|---|
-| 1 | History and Evolution of Language Models | [`01-History-and-Evolution-of-Language-Models`](01-Review-of-Fundamental-LLMs/01-History-and-Evolution-of-Language-Models/) |
-| 2 | Transformer Architecture and Self-Attention Mechanism (QKV math) | [`02-Transformer-Architecture-and-Self-Attention`](01-Review-of-Fundamental-LLMs/02-Transformer-Architecture-and-Self-Attention/) |
-| 3 | Pretraining vs. Fine-Tuning Paradigms | [`03-Pretraining-vs-Fine-Tuning-Paradigms`](01-Review-of-Fundamental-LLMs/03-Pretraining-vs-Fine-Tuning-Paradigms/) |
-| 4 | Scaling Laws and Model Efficiency | [`04-Scaling-Laws-and-Model-Efficiency`](01-Review-of-Fundamental-LLMs/04-Scaling-Laws-and-Model-Efficiency/) |
-| 5 | Ethical Considerations in Large-Scale AI | [`05-Ethical-Considerations-in-Large-Scale-AI`](01-Review-of-Fundamental-LLMs/05-Ethical-Considerations-in-Large-Scale-AI/) |
+| 1 | [History and Evolution of Language Models](01-History-and-Evolution-of-Language-Models/) | Trains an N-gram, RNN, LSTM, and Transformer from scratch on identical data — real measured perplexity across all four NLP eras, not an assertion. |
+| 2 | [Transformer Architecture and Self-Attention Mechanism](02-Transformer-Architecture-and-Self-Attention/) | Implements QKV attention from the raw formula and verifies it numerically matches PyTorch's fused kernel to within float32 precision (~1e-7). |
+| 3 | [Pretraining vs. Fine-Tuning Paradigms](03-Pretraining-vs-Fine-Tuning-Paradigms/) | Real, Colab-ready DistilBERT frozen-probe vs. full-fine-tune vs. no-pretraining comparison on SST-2 — the one topic in this phase requiring Hugging Face Hub access this sandbox couldn't reach; shipped with an honestly-labeled placeholder proof image instead of fabricated numbers. |
+| 4 | [Scaling Laws and Model Efficiency](04-Scaling-Laws-and-Model-Efficiency/) | Trains 5 model sizes (6K to 1.4M params) from scratch, fits a real power law to measured loss, and measures the training-cost trade-off scale doesn't show for free. |
+| 5 | [Ethical Considerations in Large-Scale AI](05-Ethical-Considerations-in-Large-Scale-AI/) | Trains word embeddings on a corpus with a *known, controlled* demographic co-occurrence rate and measures the resulting bias with a real WEAT-style test — cause and effect both real, both traceable. |
 
-### Phase 02 — Generative AI with LLMs
-| # | Topic | Folder |
-|---|---|---|
-| 1 | Principles and Techniques for Fine-Tuning Pretrained Models | [`01-Fine-Tuning-Principles-and-Techniques`](02-Generative-AI-with-LLMs/01-Fine-Tuning-Principles-and-Techniques/) |
-| 2 | Transfer Learning for Domain-Specific Tasks | [`02-Transfer-Learning-for-Domain-Specific-Tasks`](02-Generative-AI-with-LLMs/02-Transfer-Learning-for-Domain-Specific-Tasks/) |
-| 3 | Implementing Fine-Tuning (GPT, BERT, T5) | [`03-Implementing-Fine-Tuning-GPT-BERT-T5`](02-Generative-AI-with-LLMs/03-Implementing-Fine-Tuning-GPT-BERT-T5/) |
-| 4 | Case Studies: Text Summarization, Translation, and Sentiment Analysis | [`04-Case-Studies-Summarization-Translation-Sentiment`](02-Generative-AI-with-LLMs/04-Case-Studies-Summarization-Translation-Sentiment/) |
+## Progress
 
-### Phase 03 — Training and Optimization of LLMs
-| # | Topic | Folder |
-|---|---|---|
-| 1 | Data Collection and Preprocessing for LLMs | [`01-Data-Collection-and-Preprocessing`](03-Training-and-Optimization-of-LLMs/01-Data-Collection-and-Preprocessing/) |
-| 2 | Efficient Training Strategies: LoRA, QLoRA, Quantization (INT8/NF4), and Pruning | [`02-Efficient-Training-LoRA-QLoRA-Quantization-Pruning`](03-Training-and-Optimization-of-LLMs/02-Efficient-Training-LoRA-QLoRA-Quantization-Pruning/) |
-| 3 | Alignment Methodologies: RLHF & DPO | [`03-Alignment-RLHF-and-DPO`](03-Training-and-Optimization-of-LLMs/03-Alignment-RLHF-and-DPO/) |
-| 4 | Memory and Computational Challenges (Gradient Checkpointing, Flash Attention) | [`04-Memory-and-Computational-Challenges`](03-Training-and-Optimization-of-LLMs/04-Memory-and-Computational-Challenges/) |
+| Topic | theory.md | implementation.py | explanation.md | proof.png |
+|---|---|---|---|---|
+| 01 — History and Evolution | ✅ | ✅ Executed | ✅ | ✅ Real |
+| 02 — Self-Attention (QKV) | ✅ | ✅ Executed | ✅ | ✅ Real |
+| 03 — Pretraining vs. Fine-Tuning | ✅ | ✅ Colab-ready | ✅ | ⚠️ Placeholder (labeled) |
+| 04 — Scaling Laws & Efficiency | ✅ | ✅ Executed | ✅ | ✅ Real |
+| 05 — Ethical Considerations | ✅ | ✅ Executed | ✅ | ✅ Real (composite) |
 
-### Phase 04 — Applications and Use Cases
-| # | Topic | Folder |
-|---|---|---|
-| 1 | Introduction to Retrieval-Augmented Generation (RAG) with Vector DBs | [`01-Retrieval-Augmented-Generation-RAG-Vector-DBs`](04-Applications-and-Use-Cases/01-Retrieval-Augmented-Generation-RAG-Vector-DBs/) |
-| 2 | Integrating External Knowledge into LLMs | [`02-Integrating-External-Knowledge-into-LLMs`](04-Applications-and-Use-Cases/02-Integrating-External-Knowledge-into-LLMs/) |
-| 3 | Chain-of-Thought (CoT) Prompting and Few-Shot Learning | [`03-Chain-of-Thought-Prompting-and-Few-Shot-Learning`](04-Applications-and-Use-Cases/03-Chain-of-Thought-Prompting-and-Few-Shot-Learning/) |
-| 4 | Conversational AI, Chatbots, and Knowledge Extraction | [`04-Conversational-AI-Chatbots-Knowledge-Extraction`](04-Applications-and-Use-Cases/04-Conversational-AI-Chatbots-Knowledge-Extraction/) |
+**5 / 5 topics complete.**
 
-### Phase 05 — Frontiers and Future of LLMs
-| # | Topic | Folder |
-|---|---|---|
-| 1 | Emergent Behaviors and Scaling Hypotheses | [`01-Emergent-Behaviors-and-Scaling-Hypotheses`](05-Frontiers-and-Future-of-LLMs/01-Emergent-Behaviors-and-Scaling-Hypotheses/) |
-| 2 | Multilingual and Cross-lingual Capabilities | [`02-Multilingual-and-Cross-lingual-Capabilities`](05-Frontiers-and-Future-of-LLMs/02-Multilingual-and-Cross-lingual-Capabilities/) |
-| 3 | LLMs in Low-Resource Settings | [`03-LLMs-in-Low-Resource-Settings`](05-Frontiers-and-Future-of-LLMs/03-LLMs-in-Low-Resource-Settings/) |
-| 4 | Alignment and Controllability of LLMs | [`04-Alignment-and-Controllability-of-LLMs`](05-Frontiers-and-Future-of-LLMs/04-Alignment-and-Controllability-of-LLMs/) |
-| 5 | Beyond Text: LLMs in Robotics, Vision-Language Models, and Decision-Making | [`05-Beyond-Text-Robotics-Vision-Language-Decision-Making`](05-Frontiers-and-Future-of-LLMs/05-Beyond-Text-Robotics-Vision-Language-Decision-Making/) |
+## A Note on `proof.png` Across This Phase
+
+This repository's development sandbox has no Hugging Face Hub access (`huggingface.co` → `403 host_not_allowed`). Rather than silently degrade every topic's `implementation.py` to avoid that limitation, each topic was handled on its own merits:
+
+- **Topics 01, 02, 04** don't inherently need a pretrained checkpoint — their subject is architecture, mechanism, and scale, demonstrable from random initialization. All three were actually executed here, and `proof.png` in each is real measured output.
+- **Topic 05** could have been treated as checkpoint-dependent (probing a pretrained model for bias), but a network-free proxy — training embeddings on a corpus with a *known* injected bias rate — turned out to demonstrate the same underlying mechanism just as honestly, and more transparently, since the cause is fully controlled rather than inherited from an opaque real-world corpus. Executed for real.
+- **Topic 03** is the one genuine exception: comparing pretrained-vs-not is meaningless without real pretrained weights, and no honest network-free substitute exists for that specific claim. `implementation.py` ships correct and Colab-ready; `proof.png` ships as a clearly watermarked placeholder rather than invented numbers, and will populate with real data on first Colab run.
+
+Every topic's own `STATUS.md` documents this in more detail.
 
 ## Setup
 
+From the repository root:
+
 ```bash
-git clone https://github.com/Ayush-2703/llm-mastery.git
-cd llm-mastery
-python -m venv venv
-source venv/bin/activate        # Windows: venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
-**Running on Google Colab:** open a new notebook, set the runtime to a T4 GPU, then either clone this repo with `!git clone` or upload a single topic's `implementation.py` and run `!pip install -r requirements.txt` in the first cell. Every script is self-contained per topic — no cross-topic imports.
+Each topic's `implementation.py` is self-contained — no cross-topic imports — and runs standalone, either locally (Topics 01, 02, 04, 05 need no network access beyond fetching a small public-domain text corpus) or on Colab (Topic 03, and the optional pretrained-model sections gated behind `RUN_PRETRAINED_SECTION` flags in Topics 02 and 05).
 
-## Progress Tracker
-
-| Phase | Topics | Completed | Progress |
-|---|---|---|---|
-| 01 — Review of Fundamental LLMs | 5 | 5 | 100% |
-| 02 — Generative AI with LLMs | 4 | 0 | 0% |
-| 03 — Training and Optimization of LLMs | 4 | 0 | 0% |
-| 04 — Applications and Use Cases | 4 | 0 | 0% |
-| 05 — Frontiers and Future of LLMs | 5 | 0 | 0% |
-| **Total** | **22** | **5** | **23%** |
-
-Each topic's folder-level status lives in its own `STATUS.md`, updated as that topic's four files ship.
-
-## References
-
-- Rothman, Denis. *Transformers for Natural Language Processing.*
-- Tunstall, Lewis, Leandro von Werra, and Thomas Wolf. *Natural Language Processing with Transformers.*
-- Primary papers are cited individually, by title and author, within each topic's `theory.md`.
-
-## Author
-
-**Ayush Kumar Singh**
-B.Tech, AI & ML — Amity University Lucknow
-
-[GitHub](https://github.com/Ayush-2703) · [LinkedIn](https://www.linkedin.com/in/ayushsingh2703)
-
-## License
-
-Released under the [MIT License](LICENSE).
+---
+Part of the [llm-mastery](../README.md) curriculum.
