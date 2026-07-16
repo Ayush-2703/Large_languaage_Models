@@ -5,28 +5,6 @@
 
 The conceptual and mathematical foundation the rest of this curriculum builds on: how language models got here, exactly what self-attention computes, how pretraining and fine-tuning relate, why scale predictably helps, and how bias enters a model in the first place. Every topic pairs cited theory with a real, executed experiment.
 
-## Topics
-
-| # | Topic | What the code actually proves |
-|---|---|---|
-| 1 | [History and Evolution of Language Models](01-History-and-Evolution-of-Language-Models/) | Trains an N-gram, RNN, LSTM, and Transformer from scratch on identical data — real measured perplexity across all four NLP eras, not an assertion. |
-| 2 | [Transformer Architecture and Self-Attention Mechanism](02-Transformer-Architecture-and-Self-Attention/) | Implements QKV attention from the raw formula and verifies it numerically matches PyTorch's fused kernel to within float32 precision (~1e-7). |
-| 3 | [Pretraining vs. Fine-Tuning Paradigms](03-Pretraining-vs-Fine-Tuning-Paradigms/) | Real, Colab-ready DistilBERT frozen-probe vs. full-fine-tune vs. no-pretraining comparison on SST-2 — the one topic in this phase requiring Hugging Face Hub access this sandbox couldn't reach; shipped with an honestly-labeled placeholder proof image instead of fabricated numbers. |
-| 4 | [Scaling Laws and Model Efficiency](04-Scaling-Laws-and-Model-Efficiency/) | Trains 5 model sizes (6K to 1.4M params) from scratch, fits a real power law to measured loss, and measures the training-cost trade-off scale doesn't show for free. |
-| 5 | [Ethical Considerations in Large-Scale AI](05-Ethical-Considerations-in-Large-Scale-AI/) | Trains word embeddings on a corpus with a *known, controlled* demographic co-occurrence rate and measures the resulting bias with a real WEAT-style test — cause and effect both real, both traceable. |
-
-## Progress
-
-| Topic | theory.md | implementation.py | explanation.md | proof.png |
-|---|---|---|---|---|
-| 01 — History and Evolution | ✅ | ✅ Executed | ✅ | ✅ Real |
-| 02 — Self-Attention (QKV) | ✅ | ✅ Executed | ✅ | ✅ Real |
-| 03 — Pretraining vs. Fine-Tuning | ✅ | ✅ Colab-ready | ✅ | ⚠️ Placeholder (labeled) |
-| 04 — Scaling Laws & Efficiency | ✅ | ✅ Executed | ✅ | ✅ Real |
-| 05 — Ethical Considerations | ✅ | ✅ Executed | ✅ | ✅ Real (composite) |
-
-**5 / 5 topics complete.**
-
 ## A Note on `proof.png` Across This Phase
 
 This repository's development sandbox has no Hugging Face Hub access (`huggingface.co` → `403 host_not_allowed`). Rather than silently degrade every topic's `implementation.py` to avoid that limitation, each topic was handled on its own merits:
@@ -48,4 +26,3 @@ pip install -r requirements.txt
 Each topic's `implementation.py` is self-contained — no cross-topic imports — and runs standalone, either locally (Topics 01, 02, 04, 05 need no network access beyond fetching a small public-domain text corpus) or on Colab (Topic 03, and the optional pretrained-model sections gated behind `RUN_PRETRAINED_SECTION` flags in Topics 02 and 05).
 
 ---
-Part of the [llm-mastery](../README.md) curriculum.
