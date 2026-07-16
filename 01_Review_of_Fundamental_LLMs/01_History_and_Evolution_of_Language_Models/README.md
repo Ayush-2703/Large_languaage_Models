@@ -51,3 +51,26 @@ pip install -r requirements.txt
 Each topic's `implementation.py` is self-contained — no cross-topic imports — and runs standalone, either locally (Topics 01, 02, 04, 05 need no network access beyond fetching a small public-domain text corpus) or on Colab (Topic 03, and the optional pretrained-model sections gated behind `RUN_PRETRAINED_SECTION` flags in Topics 02 and 05).
 
 ---
+## 👤 Author
+
+<div align="center">
+
+### Ayush Kumar Singh
+
+*Researcher in Adversarial ML, Geospatial AI, and LLM/NLP Systems*
+
+[![GitHub](https://img.shields.io/badge/GitHub-Ayush%20Kumar%20Singh-181717?style=for-the-badge&logo=github)](https://github.com/Ayush-2703)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Ayush%20Kumar%20Singh-0A66C2?style=for-the-badge&logo=linkedin)](https://linkedin.com/in/ayushsingh2703)
+
+</div>
+
+---
+
+<div align="center">
+
+**If this repository helped you, please consider giving it a ⭐**  
+*It takes 2 seconds and helps others discover it.*
+
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:24243e,50:302b63,100:0f0c29&height=100&section=footer" width="100%"/>
+
+</div>
