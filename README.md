@@ -235,8 +235,8 @@ You're free to use, fork, and build on this for personal and commercial projects
 
 *Researcher in Adversarial ML, Geospatial AI, and LLM/NLP Systems*
 
-[![GitHub](https://img.shields.io/badge/GitHub-Ayush--2703-181717?style=for-the-badge&logo=github)](https://github.com/Ayush-2703)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-ayushsingh2703-0A66C2?style=for-the-badge&logo=linkedin)](https://linkedin.com/in/ayushsingh2703)
+[![GitHub](https://img.shields.io/badge/GitHub-Ayush--Kumar--Singh-181717?style=for-the-badge&logo=github)](https://github.com/Ayush-2703)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Ayush--Kumar--Singh-0A66C2?style=for-the-badge&logo=linkedin)](https://linkedin.com/in/ayushsingh2703)
 
 </div>
 
@@ -250,4 +250,3 @@ You're free to use, fork, and build on this for personal and commercial projects
 <img src="https://capsule-render.vercel.app/api?type=waving&color=0:24243e,50:302b63,100:0f0c29&height=100&section=footer" width="100%"/>
 
 </div>
----
