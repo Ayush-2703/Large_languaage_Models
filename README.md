@@ -221,11 +221,14 @@ Each topic's folder-level status lives in its own `STATUS.md`, updated as that t
 Every `theory.md` in this repo paraphrases from these directly, with citations. Nothing is block-quoted.
 
 ## Author
+<div align="center">
 
-**Ayush Kumar Singh**
+  **Ayush Kumar Singh**
 
 [![GitHub](https://img.shields.io/badge/GitHub-Ayush--2703-181717?logo=github&logoColor=white)](https://github.com/Ayush-2703)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Ayush%20Kumar%20Singh-0A66C2?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/ayushsingh2703)
+
+</div>
 
 ## License
 
