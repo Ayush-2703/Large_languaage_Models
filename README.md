@@ -220,34 +220,34 @@ Each topic's folder-level status lives in its own `STATUS.md`, updated as that t
 
 Every `theory.md` in this repo paraphrases from these directly, with citations. Nothing is block-quoted.
 
-## Author
+---
+## 📜 License
+
+Distributed under the **MIT License**. See [`LICENSE`](LICENSE) for details.  
+You're free to use, fork, and build on this for personal and commercial projects.
+
+---
+## 👤 Author
+
 <div align="center">
 
-  **Ayush Kumar Singh**
+### Ayush Kumar Singh
 
-[![GitHub](https://img.shields.io/badge/GitHub-Ayush--2703-181717?logo=github&logoColor=white)](https://github.com/Ayush-2703)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Ayush%20Kumar%20Singh-0A66C2?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/ayushsingh2703)
+*Researcher in Adversarial ML, Geospatial AI, and LLM/NLP Systems*
+
+[![GitHub](https://img.shields.io/badge/GitHub-Ayush--2703-181717?style=for-the-badge&logo=github)](https://github.com/Ayush-2703)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-ayushsingh2703-0A66C2?style=for-the-badge&logo=linkedin)](https://linkedin.com/in/ayushsingh2703)
 
 </div>
-
-## License
-
-Released under the [MIT License](LICENSE).
 
 ---
 
 <div align="center">
 
-Spot an error in a `theory.md`? Open an issue. Catching mistakes is exactly what `proof.png` is for.
+**If this repository helped you, please consider giving it a ⭐**  
+*It takes 2 seconds and helps others discover it.*
 
-If this helped attention mechanisms finally click, a star helps the next person find it too.
-
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=Ayush-2703/llm-mastery&type=Date&theme=dark" />
-  <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=Ayush-2703/llm-mastery&type=Date" />
-  <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=Ayush-2703/llm-mastery&type=Date" />
-</picture>
-
-![Footer](https://capsule-render.vercel.app/api?type=waving&color=0:7C3AED,100:0F172A&height=120&section=footer)
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:24243e,50:302b63,100:0f0c29&height=100&section=footer" width="100%"/>
 
 </div>
+---
