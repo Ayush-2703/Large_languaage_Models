@@ -1,6 +1,6 @@
 <div align="center">
 
-![LLM Mastery: A Hands-On Curriculum for Large Language Models](https://capsule-render.vercel.app/api?type=waving&color=0:0F172A,100:7C3AED&height=220&section=header&text=LLM%20Mastery&fontSize=64&fontColor=FFFFFF&fontAlignY=36&animation=fadeIn&desc=A%20Hands-On%20Curriculum%20for%20Mastering%20Large%20Language%20Models&descSize=18&descAlignY=58)
+![LLM Mastery: A Hands-On Curriculum for Large Language Models](https://capsule-render.vercel.app/api?type=waving&color=0:0F172A,100:7C3AED&height=220&section=header&text=LLM%20Mastery&fontSize=64&fontColor=FFFFFF&fontAlignY=36&animation=fadeIn&desc=A%20comprehensive%20blueprint%20for%20Mastering%20Large%20Language%20Models&descSize=18&descAlignY=58)
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://readme-typing-svg.demolab.com/?font=Fira+Code&size=20&duration=2800&pause=900&color=C4B5FD&center=true&vCenter=true&width=600&lines=22+Topics,+5+Phases,+One+Repo;Theory,+Code,+Explanation,+Proof;Every+Script+Runs+on+a+Free+T4;Small+Models.+Full+Understanding." />
