@@ -41,7 +41,7 @@ Twenty-two topics. Five phases. One free-tier Colab T4 GPU per topic, under an h
 
 ---
 
-## About
+## About 
 
 This repository covers large language models end to end across five phases and twenty-two topics: architectural fundamentals, generative fine-tuning, efficient training and alignment, applied systems like RAG, and where the field is headed next.
 
