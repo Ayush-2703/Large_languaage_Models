@@ -1,6 +1,6 @@
 # Phase 01 — Review of Fundamental LLMs
 
-[![Status](https://img.shields.io/badge/Status-Complete-brightgreen)]()
+[![Status](https://img.shields.io/badge/Status-Progress-brightgreen)]()
 [![Topics](https://img.shields.io/badge/Topics-5%2F5-brightgreen)]()
 
 The conceptual and mathematical foundation the rest of this curriculum builds on: how language models got here, exactly what self-attention computes, how pretraining and fine-tuning relate, why scale predictably helps, and how bias enters a model in the first place. Every topic pairs cited theory with a real, executed experiment.
