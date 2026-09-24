@@ -1,6 +1,6 @@
 """
 Topic 02.01 — Principles and Techniques for Fine-Tuning Pretrained Models
-=============================================================================
+============================================================================= 
 Pretrains one small bidirectional Transformer encoder via masked-language-
 modeling (MLM) on general narrative text, then loads four IDENTICAL copies
 of that same pretrained checkpoint and fine-tunes each with a different
