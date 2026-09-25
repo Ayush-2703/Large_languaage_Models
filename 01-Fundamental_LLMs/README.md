@@ -2,12 +2,6 @@
 
 ![Phase 1: Review of Fundamental LLMs](https://capsule-render.vercel.app/api?type=waving&color=0:0F172A,100:7C3AED&height=220&section=header&text=Phase%2001%20%C2%B7%20Review%20of%20Fundamental%20LLMs&fontSize=34&fontColor=FFFFFF&fontAlignY=38&animation=fadeIn&desc=Four%20eras%20of%20language%20modeling%2C%20one%20attention%20formula%2C%20and%20where%20bias%20actually%20enters&descSize=15&descAlignY=62)
 
-![Python](https://img.shields.io/badge/python-3.10%2B-3776AB?logo=python&logoColor=white)
-![PyTorch](https://img.shields.io/badge/PyTorch-2.x-EE4C2C?logo=pytorch&logoColor=white)
-![Hugging Face](https://img.shields.io/badge/Hugging%20Face-Transformers-FFD21E?logo=huggingface&logoColor=000000)
-![Colab Ready](https://img.shields.io/badge/Colab-Ready-F9AB00?logo=googlecolab&logoColor=white)
-![Topics](https://img.shields.io/badge/topics-5%2F5%20written%20%C2%B7%204%2F5%20executed-yellow)
-![License: MIT](https://img.shields.io/badge/license-MIT-green)
 
 *Phase 01 of [`llm-mastery`](../README.md) — a four-file (theory, code, explanation, proof), Colab-first LLM curriculum*
 
@@ -230,26 +224,6 @@ Found while documenting this phase, for anyone relying on it:
 
 [Repository root](../README.md) · ➡ [Phase 02 — Generative AI with LLMs](../02-Generative_AI_with_LLMs)
 
----
-
-## 📜 License
-
-Distributed under the **MIT License**. See [`LICENSE`](../LICENSE) for details. You're free to use, fork, and build on this for personal and commercial projects.
-
----
-
-## 👤 Author
-
-<div align="center">
-
-### Ayush Kumar Singh
-
-*Researcher in Adversarial ML, Geospatial AI, and LLM/NLP Systems*
-
-[![GitHub](https://img.shields.io/badge/GitHub-Ayush%20Kumar%20Singh-181717?style=for-the-badge&logo=github)](https://github.com/Ayush-2703)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Ayush%20Kumar%20Singh-0A66C2?style=for-the-badge&logo=linkedin)](https://linkedin.com/in/ayushsingh2703)
-
-</div>
 
 <div align="center">
 
