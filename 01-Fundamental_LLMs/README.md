@@ -224,6 +224,7 @@ Found while documenting this phase, for anyone relying on it:
 
 [Repository root](../README.md) · ➡ [Phase 02 — Generative AI with LLMs](../02-Generative_AI_with_LLMs)
 
+---
 
 <div align="center">
 
