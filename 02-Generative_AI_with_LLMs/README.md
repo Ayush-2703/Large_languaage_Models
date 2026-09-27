@@ -1,7 +1,7 @@
 # Phase 02 — Generative AI with LLMs
 
 [![Status](https://img.shields.io/badge/Status-Complete-brightgreen)]()
-[![Topics](https://img.shields.io/badge/Topics-0%2F4-brightgreen)]()
+[![Topics](https://img.shields.io/badge/Topics-3%2F4-brightgreen)]()
 
 Fine-tuning, end to end: the techniques, the transfer-learning theory behind them, how they differ across GPT/BERT/T5 architecture families, and three real applied case studies. Every topic in this phase touches fine-tuning pretrained models — exactly the territory where this repository's development sandbox (no Hugging Face Hub access) bites hardest, so each topic's honesty posture is documented explicitly rather than assumed uniform.
 
