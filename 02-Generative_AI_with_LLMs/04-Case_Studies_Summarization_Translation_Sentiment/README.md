@@ -1,6 +1,6 @@
 # Case Studies: Text Summarization, Translation, and Sentiment Analysis
 
-## 1. Three Tasks, Three Different Relationships to "Can a Toy Model Do This Honestly?"
+## 1. Three Tasks, Three Different Relationships to "Can a Toy Model Do This Honestly?" 
 
 This topic covers three of the most common real-world LLM applications. They are not equally reproducible at toy scale, and `implementation.py` treats each on its own honest terms rather than forcing uniform treatment:
 
