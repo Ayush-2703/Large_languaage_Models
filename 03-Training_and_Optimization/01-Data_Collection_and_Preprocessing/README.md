@@ -1,45 +1,51 @@
-# Phase 03 — Training and Optimization of LLMs
+# Data Collection and Preprocessing for LLMs
 
-[![Status](https://img.shields.io/badge/Status-Complete-brightgreen)]()
-[![Topics](https://img.shields.io/badge/Topics-4%2F4-brightgreen)]()
+## 1. Why Preprocessing Is Not a Minor Preliminary Step
 
-How LLMs actually get trained and made affordable: cleaning and tokenizing raw text, shrinking what needs to be trained and stored (LoRA, quantization, pruning), teaching a model to follow human preference (RLHF's reward model, and DPO), and the two biggest memory/compute bottlenecks (gradient checkpointing, Flash Attention). Unlike Phase 02, most of this phase's techniques are algorithmic — they don't need a *specific* real pretrained checkpoint's knowledge — so most of it runs fully real and network-free.
+The scaling laws in `01-Review-of-Fundamental-LLMs/04-Scaling-Laws-and-Model-Efficiency` treat training data as a quantity — tokens processed. But *which* tokens matters enormously, and real-world text collected at web scale arrives full of exact duplicates, near-duplicates, low-quality boilerplate, and personally identifiable information (PII). `implementation.py` builds a corpus with all four of these problems deliberately injected at known rates, then runs a real, measurable five-stage cleaning pipeline over it — every count reported by the code is the actual result of running that pipeline, not an illustration of what it would do.
 
-## Topics
+## 2. Why Duplicates Are a Real Problem, Not Just a Storage Inefficiency
 
-| # | Topic | What the code actually proves |
-|---|---|---|
-| 1 | [Data Collection and Preprocessing](01-Data-Collection-and-Preprocessing/) | A real 5-stage cleaning pipeline (dedup, near-dedup, quality filters, PII scrubbing) plus a real BPE tokenizer trained from scratch — 902→750 real documents, 2.96x real compression. Caught and fixed a real regex bug that silently missed one of two synthetic PII formats. |
-| 2 | [Efficient Training: LoRA, QLoRA, Quantization, Pruning](02-Efficient-Training-LoRA-QLoRA-Quantization-Pruning/) | All four techniques implemented from their actual math and applied to one real fine-tuned model: LoRA trains 2% of params for comparable accuracy; INT8/NF4 quantization give 4x/8x size reduction at zero measured accuracy loss; pruning traces the real accuracy-cliff curve. |
-| 3 | [Alignment: RLHF & DPO](03-Alignment-RLHF-and-DPO/) | A real Bradley-Terry reward model (0.587→1.000 pairwise accuracy) and real DPO training (0.275→1.000 preference accuracy, smoothly growing implicit reward margin) — including an honestly-reported length-bias artifact in the preference metric. RLHF's PPO stage is deliberately conceptual only, exactly as scoped before this repository's build began. |
-| 4 | [Memory and Computational Challenges](04-Memory-and-Computational-Challenges/) | Real peak-memory measurement (isolated subprocesses) showing gradient checkpointing's real 35% memory reduction at an 18.5% time cost, plus real attention memory/time scaling showing why avoiding the materialized attention matrix matters more as sequences grow — the general principle behind Flash Attention, honestly distinguished from its GPU-specific mechanism, which this CPU sandbox cannot run under any configuration. |
+Lee et al. ("Deduplicating Training Data Makes Language Models Better," 2022) found that large web-scraped corpora contain substantial exact and near-duplicate content, and that training on de-duplicated data measurably improves downstream model quality — not merely training efficiency. Two distinct mechanisms are commonly cited: duplicated text lets a model effectively "memorize" repeated passages rather than generalizing, and duplicated content skews the training distribution toward whatever happened to be copied or crawled multiple times, rather than reflecting a representative sample of language.
 
-## Progress
+`implementation.py` separates duplication into two tiers, since they need different detection methods:
 
-| Topic | theory.md | implementation.py | explanation.md | proof.png |
-|---|---|---|---|---|
-| 01 — Data Collection & Preprocessing | ✅ | ✅ Executed | ✅ | ✅ Real |
-| 02 — Efficient Training | ✅ | ✅ Executed | ✅ | ✅ Real |
-| 03 — Alignment (RLHF & DPO) | ✅ | ✅ Executed (RM + DPO); PPO conceptual | ✅ | ✅ Real |
-| 04 — Memory & Computational Challenges | ✅ | ✅ Executed | ✅ | ✅ Real |
+- **Exact duplicates** — byte-identical documents — are found trivially via hashing: `hashlib.sha256(d.encode()).hexdigest()`. Two documents hash identically if and only if they are exactly identical (ignoring the astronomically small probability of a SHA-256 collision), so a set of seen hashes catches every exact repeat in a single pass.
+- **Near-duplicates** — documents differing only in minor edits (whitespace, punctuation, a word or two) — require a *similarity* measure, not an equality check. `implementation.py` uses **Jaccard similarity over character 5-grams**: representing each document as the set of all 5-character substrings it contains, then measuring `|A ∩ B| / |A ∪ B|` between document pairs. Two documents sharing most of their substrings — which near-duplicate text does, almost by definition — score close to 1.0.
 
-**4 / 4 topics complete — the first fully-real phase in this repository, with zero placeholder proof images.**
+## 3. MinHash and Locality-Sensitive Hashing: What Production Systems Use Instead
 
-## A Note on Honesty Across This Phase
+`implementation.py`'s near-duplicate detector computes exact Jaccard similarity between every pair of documents — an `O(n²)` comparison, explicitly flagged as such in the code's own docstring. This is fine at the corpus size demonstrated here (roughly 900 documents), but does not scale to a real web-crawl corpus of hundreds of millions of documents, where `n²` comparisons become computationally prohibitive. Real large-scale deduplication pipelines (e.g., CCNet, RefinedWeb) instead use **MinHash**: a fixed-size sketch (a small set of minimum hash values under several different hash functions) that *approximates* a document's n-gram set well enough that comparing two documents' MinHash sketches approximates their true Jaccard similarity, without ever materializing or comparing full n-gram sets. Combined with **Locality-Sensitive Hashing (LSH)** — bucketing documents by portions of their MinHash sketch so that only documents landing in the same bucket ever need to be compared directly — this reduces near-duplicate detection from `O(n²)` to approximately linear in corpus size. `implementation.py` computes exact Jaccard directly specifically so the *definition* of near-duplication is fully visible in the code; a production system would swap this exact computation for the MinHash+LSH approximation without changing what "near-duplicate" means, only how cheaply it's detected at scale.
 
-Every technique in this phase turned out to be a genuine algorithm applicable to any pretrained-then-fine-tuned model, not a property of one *specific* real-world checkpoint — which meant this sandbox's lack of Hugging Face Hub access, the dominant constraint in Phase 02, barely mattered here. The one deliberate scope limit is RLHF's PPO stage (Topic 03): implementing rollout sampling, advantage estimation, and clipped policy updates correctly carries real risk of subtle bugs that would produce code that runs without actually demonstrating correct reinforcement learning — a worse outcome than the rigorous conceptual treatment `theory.md` gives it instead. This was decided and communicated before this repository's very first file was written, not a fallback reached for after running into difficulty.
+## 4. Heuristic Quality Filtering
 
-Two real bugs were also caught and fixed during this phase's development, both documented in full in their respective topics rather than silently corrected: a PII-detection regex that missed one of two synthetic phone formats (Topic 01), and an ambiguous console-output label that made a real memory *reduction* read like an increase (Topic 04). A length-bias artifact in DPO's preference metric (Topic 03) was reduced but not fully eliminated, and is reported as the real, partially-unresolved finding it is.
+Not everything low-quality is a duplicate. `implementation.py`'s `quality_score` function applies three rules, each modeled on published large-corpus filtering heuristics (Raffel et al.'s C4 cleaning rules; Rae et al.'s Gopher paper documents a similar heuristic filter stack):
 
-## Setup
+- **Length filter** — documents under 20 characters are rejected outright; too short to carry meaningful linguistic content.
+- **Alpha-ratio filter** — documents where fewer than 60% of characters are alphabetic or whitespace are rejected, catching symbol-heavy junk ("!!!", "***") that passed the length filter.
+- **Repetition filter** — documents with fewer than 40% unique words (for documents with at least 4 words) are rejected, catching degenerate repeated-token spam ("N/A N/A N/A N/A N/A") that could otherwise look like ordinary short text.
 
-From the repository root:
+These are heuristics, not a learned classifier — deliberately so. `theory.md`'s own honesty about this matches the real literature's: heuristic filters are cheap, fast, and interpretable (you can always point to *which* rule rejected a document), at the cost of being cruder than a trained quality classifier would be. Both approaches see real production use, often layered together.
 
-```bash
-pip install -r requirements.txt
-```
+## 5. PII Scrubbing and Its Real Limitation
 
-Topic 01 additionally installs `tokenizers` (already listed in the root `requirements.txt`) for real local BPE training — no Hugging Face Hub access required, since tokenizer *training* is a local operation. Topic 04's memory measurements launch isolated subprocesses internally; no extra setup is needed to reproduce them.
+`implementation.py` redacts synthetic emails and phone numbers via regular expressions, and a real bug was caught and fixed during development: the original phone-number regex only matched a 10-digit, area-code-formatted pattern, silently missing every instance of this script's own second synthetic template (a plain 7-digit local-format number) — see `explanation.md` for the fix. That bug is itself a small, direct illustration of a real, well-documented limitation of regex-based PII detection: **phone numbers, addresses, and names appear in enough different formats that no fixed set of patterns catches all of them**, which is precisely why production PII-scrubbing pipelines increasingly rely on trained named-entity-recognition models rather than regex alone — trading interpretability for better recall on the long tail of formats a hand-written pattern will always eventually miss.
 
----
-Part of the [llm-mastery](../README.md) curriculum.
+## 6. Tokenizer Training: A Real BPE Tokenizer, Not a Simulation
+
+Every other topic in this repository up to this point has used a fixed character-level vocabulary — a deliberate simplification for architecture and mechanism demonstrations. This topic trains a **real byte-pair-encoding (BPE) tokenizer** (Sennrich et al., 2016) from scratch on the cleaned corpus, using Hugging Face's `tokenizers` library — a local training operation requiring no model download, just the library itself (installed from PyPI, unaffected by this sandbox's Hugging Face Hub restriction). BPE works by iteratively merging the most frequent adjacent symbol pair in the corpus into a new symbol, starting from individual characters and repeating until a target vocabulary size is reached — building up common subwords ("ing", "tion") and even whole common words as single tokens, while staying able to fall back to smaller pieces for rare or unseen words.
+
+`implementation.py` measures the practical payoff directly: encoding held-out text (a fresh slice of the source corpus, never seen during tokenizer training) character-by-character takes one "token" per character, while the trained 800-token BPE vocabulary encodes the same text in roughly a third as many tokens — a **~3x compression ratio**. This matters beyond storage: since attention's computational cost scales quadratically with sequence length (`01-Review-of-Fundamental-LLMs/02-Transformer-Architecture-and-Self-Attention`, `theory.md` §6), a 3x reduction in token count is roughly a 9x reduction in attention compute for the same underlying text.
+
+## 7. Scaling to Production
+
+Every stage demonstrated here operates identically in kind at production scale — only the implementation of each stage changes to handle billions of documents rather than under a thousand: exact hashing scales trivially; near-duplicate detection moves from exact Jaccard to MinHash+LSH (§3); quality filtering heuristics are often supplemented with trained classifiers; PII scrubbing moves from regex to NER-based detection; and BPE tokenizer training runs on samples of the full target corpus (training on the entire multi-trillion-token corpus isn't necessary — BPE merge statistics stabilize on a representative sample). This topic's actual vocabulary size (800) is also a toy-scale choice — production tokenizers typically use 30,000–100,000+ merges, chosen large enough to represent common subwords across many languages and domains without inflating the embedding table excessively.
+
+## References
+
+- Rothman, Denis. *Transformers for Natural Language Processing.*
+- Tunstall, Lewis, Leandro von Werra, and Thomas Wolf. *Natural Language Processing with Transformers.*
+- Sennrich, Rico, Barry Haddow, and Alexandra Birch. "Neural Machine Translation of Rare Words with Subword Units." *ACL*, 2016.
+- Raffel, Colin, et al. "Exploring the Limits of Transfer Learning with a Unified Text-to-Text Transformer." *JMLR*, 2020.
+- Rae, Jack W., et al. "Scaling Language Models: Methods, Analysis & Insights from Training Gopher." 2021.
+- Lee, Katherine, et al. "Deduplicating Training Data Makes Language Models Better." *ACL*, 2022.
