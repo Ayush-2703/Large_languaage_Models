@@ -1,27 +1,26 @@
 <div align="center">
-
+  
 ![LLM Mastery: A Hands-On Curriculum for Large Language Models](https://capsule-render.vercel.app/api?type=waving&color=0:0F172A,100:7C3AED&height=220&section=header&text=LLM%20Mastery&fontSize=64&fontColor=FFFFFF&fontAlignY=36&animation=fadeIn&desc=A%20comprehensive%20blueprint%20for%20Mastering%20Large%20Language%20Models&descSize=18&descAlignY=58)
-
+ 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://readme-typing-svg.demolab.com/?font=Fira+Code&size=20&duration=2800&pause=900&color=C4B5FD&center=true&vCenter=true&width=600&lines=22+Topics,+5+Phases,+One+Repo;Theory,+Code,+Explanation,+Proof;Every+Script+Runs+on+a+Free+T4;Small+Models.+Full+Understanding." />
   <img alt="Typing SVG" src="https://readme-typing-svg.demolab.com/?font=Fira+Code&size=20&duration=2800&pause=900&color=6D28D9&center=true&vCenter=true&width=600&lines=22+Topics,+5+Phases,+One+Repo;Theory,+Code,+Explanation,+Proof;Every+Script+Runs+on+a+Free+T4;Small+Models.+Full+Understanding." />
 </picture>
-.....................................
+
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Python 3.10+](https://img.shields.io/badge/Python-3.10%2B-3776AB?logo=python&logoColor=white)](https://www.python.org/)
 [![PyTorch](https://img.shields.io/badge/PyTorch-2.x-EE4C2C?logo=pytorch&logoColor=white)](https://pytorch.org/)
 [![Hugging Face Transformers](https://img.shields.io/badge/Hugging%20Face-Transformers-FFD21E?logo=huggingface&logoColor=000000)](https://huggingface.co/docs/transformers)
 [![Colab Ready](https://img.shields.io/badge/Colab-Ready-F9AB00?logo=googlecolab&logoColor=white)](https://colab.research.google.com/)
-
-[![Progress](https://img.shields.io/badge/Progress-0%2F22%20Topics-lightgrey)](#progress-tracker)
+ 
+[![Progress](https://img.shields.io/badge/Progress-9%2F22%20Topics%20Fully%20Proven-yellow)](#progress-tracker)
 [![Status](https://img.shields.io/badge/Status-Building%20in%20Public-orange)](#progress-tracker)
-[![Last Commit](https://img.shields.io/github/last-commit/Ayush-2703/llm-mastery)](https://github.com/Ayush-2703/llm-mastery/commits/main)
-
-[![Stars](https://img.shields.io/github/stars/Ayush-2703/llm-mastery?style=social)](https://github.com/Ayush-2703/llm-mastery/stargazers)
-[![Forks](https://img.shields.io/github/forks/Ayush-2703/llm-mastery?style=social)](https://github.com/Ayush-2703/llm-mastery/network/members)
-
+[![Last Commit](https://img.shields.io/github/last-commit/Ayush-2703/Large_languaage_Models)](https://github.com/Ayush-2703/Large_languaage_Models/commits/main)
+ 
+[![Stars](https://img.shields.io/github/stars/Ayush-2703/Large_languaage_Models?style=social)](https://github.com/Ayush-2703/Large_languaage_Models/stargazers)
+[![Forks](https://img.shields.io/github/forks/Ayush-2703/Large_languaage_Models?style=social)](https://github.com/Ayush-2703/Large_languaage_Models/network/members)
+ 
 </div>
-
 Twenty-two topics. Five phases. One free-tier Colab T4 GPU per topic, under an hour each. This is a hands-on curriculum for the full arc of large language models, from the QKV math inside self-attention through RAG pipelines, DPO alignment, and multimodal frontiers. Every topic ships runnable code and a generated proof that it actually ran.
 
 ## Table of Contents
