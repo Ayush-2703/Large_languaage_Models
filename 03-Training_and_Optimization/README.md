@@ -1,7 +1,7 @@
 # Phase 03 — Training and Optimization of LLMs
 
 [![Status](https://img.shields.io/badge/Status-Complete-brightgreen)]()
-[![Topics](https://img.shields.io/badge/Topics-2%2F4-brightgreen)]()
+[![Topics](https://img.shields.io/badge/Topics-4%2F4-brightgreen)]()
 
 How LLMs actually get trained and made affordable: cleaning and tokenizing raw text, shrinking what needs to be trained and stored (LoRA, quantization, pruning), teaching a model to follow human preference (RLHF's reward model, and DPO), and the two biggest memory/compute bottlenecks (gradient checkpointing, Flash Attention). Unlike Phase 02, most of this phase's techniques are algorithmic — they don't need a *specific* real pretrained checkpoint's knowledge — so most of it runs fully real and network-free.
 
