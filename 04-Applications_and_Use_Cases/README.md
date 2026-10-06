@@ -1,7 +1,7 @@
 # Phase 04 — Applications and Use Cases
 
 [![Status](https://img.shields.io/badge/Status-Complete-brightgreen)]()
-[![Topics](https://img.shields.io/badge/Topics-2%2F4-brightgreen)]()
+[![Topics](https://img.shields.io/badge/Topics-3%2F4-brightgreen)]()
 
 Where LLMs meet the outside world: retrieving from a real vector database, integrating knowledge beyond parametric memory, prompting techniques that elicit better reasoning, and the two core skills behind chatbots. This phase produced this repository's richest run of real, resolved debugging journeys — three of its four topics caught and fixed a genuine bug or design flaw mid-development, each documented in full rather than smoothed over.
 
