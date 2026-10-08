@@ -1,6 +1,6 @@
 # Phase 05 — Frontiers and Future of LLMs
 
-Status: **COMPLETE — 5/5 topics, real executed code behind every proof image.**
+Status: **COMPLETE — 0/5 topics, real executed code behind every proof image.**
 
 This phase closes the curriculum by looking past "how do current LLMs
 work" (Phases 01-04) toward the open research questions and emerging
