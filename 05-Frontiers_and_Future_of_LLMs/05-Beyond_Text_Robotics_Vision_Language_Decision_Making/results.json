@@ -1,0 +1,9 @@
+{
+  "n_train_transitions": 9857,
+  "n_eval_episodes": 500,
+  "full_policy_success_rate": 0.98,
+  "vision_only_success_rate": 0.55,
+  "chance_level": 0.3333333333333333,
+  "train_time_full": 9.094501972198486,
+  "train_time_vision_only": 8.673012495040894
+}
