@@ -156,24 +156,6 @@ These anchor the topics planned above; each topic's own `README.md` will cite th
 
 ---
 
-## 📜 License
-
-Distributed under the **MIT License**. See [`LICENSE`](../LICENSE) for details.
-
----
-
-## 👤 Author
-
-<div align="center">
-
-### Ayush Kumar Singh
-
-*Researcher in Adversarial ML, Geospatial AI, and LLM/NLP Systems*
-
-[![GitHub](https://img.shields.io/badge/GitHub-Ayush%20Kumar%20Singh-181717?style=for-the-badge&logo=github)](https://github.com/Ayush-2703)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Ayush%20Kumar%20Singh-0A66C2?style=for-the-badge&logo=linkedin)](https://linkedin.com/in/ayushsingh2703)
-
-</div>
 
 <div align="center">
 
