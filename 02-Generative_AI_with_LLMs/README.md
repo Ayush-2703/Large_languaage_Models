@@ -1,48 +1,96 @@
-# Phase 02 — Generative AI with LLMs
+# Generative AI with LLMs
 
-[![Status](https://img.shields.io/badge/Status-Complete-brightgreen)]()
-[![Topics](https://img.shields.io/badge/Topics-3%2F4-brightgreen)]()
+> Module 02 of **Large Language Models**: from transformer internals to aligned, deployable LLM systems.
 
-Fine-tuning, end to end: the techniques, the transfer-learning theory behind them, how they differ across GPT/BERT/T5 architecture families, and three real applied case studies. Every topic in this phase touches fine-tuning pretrained models — exactly the territory where this repository's development sandbox (no Hugging Face Hub access) bites hardest, so each topic's honesty posture is documented explicitly rather than assumed uniform.
-
-## Topics
-
-| # | Topic | What the code actually proves |
-|---|---|---|
-| 1 | [Fine-Tuning Principles and Techniques](01-Fine-Tuning-Principles-and-Techniques/) | One MLM-pretrained encoder, four fine-tuning techniques (naive/discriminative-LR/warmup-cosine/gradual-unfreeze) — real convergence curves, including an honest surprise where the "protective" techniques converge slower on an easy task within a fixed budget. |
-| 2 | [Transfer Learning for Domain-Specific Tasks](02-Transfer-Learning-for-Domain-Specific-Tasks/) | Domain-adaptive pretraining (DAPT) vs. no-adaptation vs. no-pretraining, real 3-arm comparison — includes a real bug caught and fixed mid-development (CLS token never pretrained), documented in full rather than silently corrected. |
-| 3 | [Implementing Fine-Tuning (GPT, BERT, T5)](03-Implementing-Fine-Tuning-GPT-BERT-T5/) | Three architecture families (MiniGPT, MiniBERT, MiniT5) built from scratch, each fine-tuned via its own architecture-appropriate method (last-token / [CLS] / text-to-text generation) — real cross-attention, real checkpoint-reuse technique (Rothe et al., 2020), real comparable accuracy across all three. |
-| 4 | [Case Studies: Summarization, Translation, Sentiment](04-Case-Studies-Summarization-Translation-Sentiment/) | Real sentiment case study with negation patterns and a full confusion matrix; real toy translation demonstrating genuine word-reordering via cross-attention; summarization shipped as correct Colab-ready code but honestly not executed, since a toy model cannot produce coherent summaries. |
-
-## Progress
-
-| Topic | theory.md | implementation.py | explanation.md | proof.png |
-|---|---|---|---|---|
-| 01 — Fine-Tuning Principles & Techniques | ✅ | ✅ Executed | ✅ | ✅ Real |
-| 02 — Transfer Learning for Domains | ✅ | ✅ Executed | ✅ | ✅ Real |
-| 03 — Implementing GPT/BERT/T5 | ✅ | ✅ Executed | ✅ | ✅ Real |
-| 04 — Case Studies | ✅ | ✅ Executed (2/3 case studies) | ✅ | ⚠️ Composite (2 real panels + 1 labeled placeholder) |
-
-**4 / 4 topics complete.**
-
-## A Note on Honesty Across This Phase
-
-Every topic in Phase 02 is, in some form, about fine-tuning a pretrained model — the exact territory this sandbox's lack of Hugging Face Hub access affects most. Rather than uniformly degrade every topic to network-free proxies, or uniformly ship placeholders, each topic was handled on its actual merits:
-
-- **Topics 01, 02, 03** don't need a *specific* real-world pretrained checkpoint's knowledge — they need *a* genuinely pretrained checkpoint to fine-tune, which a from-scratch MLM/CLM-pretrained model provides just as validly for studying technique mechanics. All three were fully executed, including one real bug caught and fixed in Topic 02 (documented in that topic's `explanation.md` and `theory.md` in detail, not glossed over) and one deliberately-reported counterintuitive result in Topic 01 (the "safer" fine-tuning techniques converging slower within a fixed budget — a real, explained trade-off, not a tuning failure).
-- **Topic 04** splits three ways: sentiment analysis and a toy translation mechanism demo are both genuinely reproducible network-free and were executed for real; summarization inherently requires real pretrained sequence-generation knowledge that no toy model trained in seconds can honestly provide, so that one case study ships as correct, Colab-ready code with a clearly watermarked placeholder rather than fabricated ROUGE scores.
-
-Every topic's own `STATUS.md` documents the specifics.
-
-## Setup
-
-From the repository root:
-
-```bash
-pip install -r requirements.txt
-```
-
-Each topic's `implementation.py` is self-contained — no cross-topic imports, even where architecture code (the shared `Attention`/`EncoderBlock`/`DecoderBlock` pattern used throughout this phase) is conceptually identical across topics. Colab-only sections (real HF checkpoints in Topics 03 and 04) are gated behind explicit `RUN_*` flags near the bottom of each script.
+![Python](https://img.shields.io/badge/Python-3.10+-3776AB?logo=python&logoColor=white)
+![PyTorch](https://img.shields.io/badge/PyTorch-2.x-EE4C2C?logo=pytorch&logoColor=white)
+![HF](https://img.shields.io/badge/Hugging%20Face-Transformers%20%7C%20PEFT%20%7C%20TRL-FFD21E?logo=huggingface&logoColor=black)
+![Colab](https://img.shields.io/badge/Runs%20on-Colab%20T4-F9AB00?logo=googlecolab&logoColor=white)
 
 ---
-Part of the [llm-mastery](../README.md) curriculum.
+
+## Overview
+
+This module covers the full lifecycle of a generative LLM: how the model is built and pre-trained, how it is adapted to a task, how it is aligned with human preferences, and how it is wired into applications. Each section pairs the theory with a runnable experiment.
+
+## Lifecycle at a glance
+
+```
+Pre-training ──► Task adaptation ──► Alignment ──► Application
+ (transformer,    (prompting, SFT,     (RLHF / PPO,   (RAG, agents,
+  scaling laws)    instruction tuning,  reward models,  evaluation,
+                   LoRA / QLoRA)        safety)         serving)
+```
+
+## Contents
+
+### 1. Foundations: Transformers and Pre-training
+- Generative tasks and the LLM landscape
+- Encoder-only, decoder-only and encoder-decoder architectures
+- Self-attention, positional encoding, KV caching
+- Pre-training objectives: causal LM vs. masked LM
+- Compute-optimal training and scaling laws
+
+### 2. Inference and Prompting
+- Decoding strategies: greedy, beam, top-k, top-p, temperature
+- Prompt engineering: zero-shot, few-shot, chain-of-thought
+- Context window limits and their trade-offs
+
+### 3. Adaptation and Fine-tuning
+- Full fine-tuning and catastrophic forgetting
+- Instruction tuning and dataset construction
+- Parameter-efficient fine-tuning: **LoRA**, **QLoRA**, prompt tuning
+- Evaluation: ROUGE, BLEU, perplexity, benchmark suites
+
+### 4. Alignment
+- The HHH objective: helpful, honest, harmless
+- Reward modelling from human preferences
+- RLHF with PPO, and KL-regularized optimization
+- Preference-optimization alternatives (DPO)
+- Reward hacking and mitigation
+
+### 5. LLM-powered Applications
+- Retrieval-Augmented Generation (RAG)
+- Tool use and agent patterns (ReAct, program-aided reasoning)
+- Hallucination, grounding and guardrails
+- Optimization for deployment: quantization, distillation, pruning
+
+## Repository structure
+
+<!-- TODO: replace with the actual contents of this folder -->
+```
+02-Generative_AI_with_LLMs/
+├── README.md
+├── <notebook / script>      # e.g. lab for fine-tuning with LoRA
+├── <notebook / script>      # e.g. lab for RLHF
+└── ...
+```
+
+## Getting started
+
+```bash
+git clone https://github.com/Ayush-2703/Large_languaage_Models.git
+cd Large_languaage_Models/02-Generative_AI_with_LLMs
+pip install torch transformers datasets peft trl evaluate accelerate bitsandbytes
+```
+
+Notebooks are sized for a free-tier Colab T4 GPU. Heavier steps use small models or quantization so they stay reproducible.
+
+## Key takeaways
+
+| Stage | Core idea | Main trade-off |
+|---|---|---|
+| Pre-training | Learn language statistics at scale | Compute and data cost |
+| Fine-tuning | Specialize to a task | Forgetting vs. performance |
+| PEFT (LoRA) | Train low-rank adapters only | Capacity vs. memory |
+| RLHF | Optimize for human preference | Reward hacking, instability |
+| RAG | Ground outputs in external knowledge | Retrieval quality, latency |
+
+## Related
+
+- Parent repo: [Large_languaage_Models](https://github.com/Ayush-2703/Large_languaage_Models)
+
+## Author
+
+**Ayush Kumar Singh**: B.Tech AI & ML, Amity University Lucknow
+[GitHub](https://github.com/Ayush-2703) · [LinkedIn](https://linkedin.com/in/ayushsingh2703)
