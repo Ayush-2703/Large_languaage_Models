@@ -1,96 +1,222 @@
-# Generative AI with LLMs
+<div align="center">
 
-> Module 02 of **Large Language Models**: from transformer internals to aligned, deployable LLM systems.
+![Phase 02: Generative AI with LLMs](https://capsule-render.vercel.app/api?type=waving&color=0:0F172A,100:0891B2&height=220&section=header&text=Phase%2002%20%C2%B7%20Generative%20AI%20with%20LLMs&fontSize=34&fontColor=FFFFFF&fontAlignY=38&animation=fadeIn&desc=TODO%3A%20one-line%20tagline%20(keep%20under%2090%20characters)&descSize=15&descAlignY=62)
 
-![Python](https://img.shields.io/badge/Python-3.10+-3776AB?logo=python&logoColor=white)
-![PyTorch](https://img.shields.io/badge/PyTorch-2.x-EE4C2C?logo=pytorch&logoColor=white)
-![HF](https://img.shields.io/badge/Hugging%20Face-Transformers%20%7C%20PEFT%20%7C%20TRL-FFD21E?logo=huggingface&logoColor=black)
-![Colab](https://img.shields.io/badge/Runs%20on-Colab%20T4-F9AB00?logo=googlecolab&logoColor=white)
+*Phase 02 of [`llm-mastery`](../README.md) — a four-file (theory, code, explanation, proof), Colab-first LLM curriculum*
+
+</div>
+
+---
+
+## Table of Contents
+
+- [Overview](#overview)
+- [The Arc of This Phase](#the-arc-of-this-phase)
+- [Topics at a Glance](#topics-at-a-glance)
+- [Folder Structure](#folder-structure)
+- [Datasets and Models Used in This Phase](#datasets-and-models-used-in-this-phase)
+- [Results Snapshot](#results-snapshot)
+- [Highlights Gallery](#highlights-gallery)
+- [Getting Started](#getting-started)
+- [Known Issues](#known-issues)
+- [Key References](#key-references)
+- [Navigate](#navigate)
+- [License](#license)
+- [Author](#author)
 
 ---
 
 ## Overview
 
-This module covers the full lifecycle of a generative LLM: how the model is built and pre-trained, how it is adapted to a task, how it is aligned with human preferences, and how it is wired into applications. Each section pairs the theory with a runnable experiment.
+<!-- 2 short paragraphs, max 3 sentences each. -->
 
-## Lifecycle at a glance
+**Paragraph 1 — the through-line.** TODO: the single idea every topic in this phase shares (what Phase 01 handed over, and what this phase builds on it). End with the question the phase answers.
 
-```
-Pre-training ──► Task adaptation ──► Alignment ──► Application
- (transformer,    (prompting, SFT,     (RLHF / PPO,   (RAG, agents,
-  scaling laws)    instruction tuning,  reward models,  evaluation,
-                   LoRA / QLoRA)        safety)         serving)
-```
+**Paragraph 2 — the standard it holds itself to.** TODO: how many topics were actually executed, what real numbers are in the result images, and which topic (if any) could not be run and why. State this plainly, e.g. "N of M topics executed; Topic X needs Y and is not yet run."
 
-## Contents
+## The Arc of This Phase
 
-### 1. Foundations: Transformers and Pre-training
-- Generative tasks and the LLM landscape
-- Encoder-only, decoder-only and encoder-decoder architectures
-- Self-attention, positional encoding, KV caching
-- Pre-training objectives: causal LM vs. masked LM
-- Compute-optimal training and scaling laws
+<!-- One short paragraph per topic. Each: the question it asks, the method, and a link to its row in Results Snapshot. Do NOT restate numbers here. -->
 
-### 2. Inference and Prompting
-- Decoding strategies: greedy, beam, top-k, top-p, temperature
-- Prompt engineering: zero-shot, few-shot, chain-of-thought
-- Context window limits and their trade-offs
+**2.1 — TODO title.** The question this topic asks → how it is answered (method, data, model) → [result](#results-snapshot).
 
-### 3. Adaptation and Fine-tuning
-- Full fine-tuning and catastrophic forgetting
-- Instruction tuning and dataset construction
-- Parameter-efficient fine-tuning: **LoRA**, **QLoRA**, prompt tuning
-- Evaluation: ROUGE, BLEU, perplexity, benchmark suites
+**2.2 — TODO title.** Question → method → [result](#results-snapshot).
 
-### 4. Alignment
-- The HHH objective: helpful, honest, harmless
-- Reward modelling from human preferences
-- RLHF with PPO, and KL-regularized optimization
-- Preference-optimization alternatives (DPO)
-- Reward hacking and mitigation
+**2.3 — TODO title.** Question → method → [result](#results-snapshot).
 
-### 5. LLM-powered Applications
-- Retrieval-Augmented Generation (RAG)
-- Tool use and agent patterns (ReAct, program-aided reasoning)
-- Hallucination, grounding and guardrails
-- Optimization for deployment: quantization, distillation, pruning
+**2.4 — TODO title.** Question → method → [result](#results-snapshot).
 
-## Repository structure
+**2.5 — TODO title.** Question → method → [result](#results-snapshot). Close the loop to a Phase 01 topic if one exists.
 
-<!-- TODO: replace with the actual contents of this folder -->
+## Topics at a Glance
+
+| # | Topic | Folder | What the code actually proves |
+|---|-------|--------|--------------------------------|
+| 1 | TODO | [`01-TODO_Folder`](01-TODO_Folder) | One-line, evidence-style claim |
+| 2 | TODO | [`02-TODO_Folder`](02-TODO_Folder) | One-line, evidence-style claim |
+| 3 | TODO | [`03-TODO_Folder`](03-TODO_Folder) | One-line, evidence-style claim |
+| 4 | TODO | [`04-TODO_Folder`](04-TODO_Folder) | One-line, evidence-style claim |
+| 5 | TODO | [`05-TODO_Folder`](05-TODO_Folder) | One-line, evidence-style claim |
+
+Every topic follows the repository's four-file structure: `README.md` (theory), `implementation.py`, `explanation.md`, and a result image under `Image/`. See [Known Issues](#known-issues) for any topic where a piece is missing.
+
+## Folder Structure
+
 ```
 02-Generative_AI_with_LLMs/
-├── README.md
-├── <notebook / script>      # e.g. lab for fine-tuning with LoRA
-├── <notebook / script>      # e.g. lab for RLHF
-└── ...
+├── README.md                          (this file)
+│
+├── 01-TODO_Folder/
+│   ├── README.md              — theory: TODO
+│   ├── implementation.py      — TODO: what it trains / runs
+│   ├── explanation.md         — TODO: line-by-line walkthrough
+│   └── Image/
+│       └── TODO.png
+│
+├── 02-TODO_Folder/
+│   ├── README.md              — theory: TODO
+│   ├── implementation.py      — TODO
+│   ├── explanation.md
+│   └── Image/
+│       └── TODO.png
+│
+├── 03-TODO_Folder/
+│   └── ...
+├── 04-TODO_Folder/
+│   └── ...
+└── 05-TODO_Folder/
+    └── ...
 ```
 
-## Getting started
+## Datasets and Models Used in This Phase
+
+| Topic | Data / model | Notes |
+|-------|--------------|-------|
+| 2.1 | TODO dataset (size, split) · TODO model (params, checkpoint) | One line: hardware, runtime, anything unusual |
+| 2.2 | TODO | TODO |
+| 2.3 | TODO | TODO |
+| 2.4 | TODO | TODO |
+| 2.5 | TODO | TODO |
+
+## Results Snapshot
+
+<!-- Single canonical results table. Numbers copied from the committed result image or explanation.md, with units. Mark unexecuted topics honestly. -->
+
+| Topic | Headline result |
+|-------|------------------|
+| 2.1 | **Metric = value** (n params, t seconds, hardware). One sentence on what it means. |
+| 2.2 | **Metric = value**. One sentence on what it means. |
+| 2.3 | No results yet — `implementation.py` written, not yet executed (reason). See [Known Issues](#known-issues). |
+| 2.4 | **Metric = value**. Flag any anomaly honestly. |
+| 2.5 | **Metric = value**. One sentence on what it means. |
+
+## Highlights Gallery
+
+<div align="center">
+
+<table>
+<tr>
+<td width="50%"><img src="01-TODO_Folder/Image/TODO.png" alt="TODO alt text"/><br/><sub><b>2.1</b> — one-line caption</sub></td>
+<td width="50%"><img src="02-TODO_Folder/Image/TODO.png" alt="TODO alt text"/><br/><sub><b>2.2</b> — one-line caption</sub></td>
+</tr>
+<tr>
+<td width="50%"><img src="04-TODO_Folder/Image/TODO.png" alt="TODO alt text"/><br/><sub><b>2.4</b> — one-line caption</sub></td>
+<td width="50%"><img src="05-TODO_Folder/Image/TODO.png" alt="TODO alt text"/><br/><sub><b>2.5</b> — one-line caption</sub></td>
+</tr>
+</table>
+
+</div>
+
+> Spaces in image filenames must be URL-encoded (`%20`) in `src`.
+
+## Getting Started
+
+Repo-wide setup, from the repository root:
 
 ```bash
 git clone https://github.com/Ayush-2703/Large_languaage_Models.git
-cd Large_languaage_Models/02-Generative_AI_with_LLMs
-pip install torch transformers datasets peft trl evaluate accelerate bitsandbytes
+cd Large_languaage_Models
+
+python -m venv venv
+source venv/bin/activate          # Windows: venv\Scripts\activate
+
+pip install -r requirements.txt
+cd 02-Generative_AI_with_LLMs
 ```
 
-Notebooks are sized for a free-tier Colab T4 GPU. Heavier steps use small models or quantization so they stay reproducible.
+Each topic's `implementation.py` is self-contained and runs standalone:
 
-## Key takeaways
+```bash
+cd 01-TODO_Folder && python implementation.py && cd ..    # local, CPU is fine
+cd 02-TODO_Folder && python implementation.py && cd ..    # Colab T4 GPU recommended
+```
 
-| Stage | Core idea | Main trade-off |
-|---|---|---|
-| Pre-training | Learn language statistics at scale | Compute and data cost |
-| Fine-tuning | Specialize to a task | Forgetting vs. performance |
-| PEFT (LoRA) | Train low-rank adapters only | Capacity vs. memory |
-| RLHF | Optimize for human preference | Reward hacking, instability |
-| RAG | Ground outputs in external knowledge | Retrieval quality, latency |
+Topics needing a GPU or Hugging Face Hub access (TODO: list them):
 
-## Related
+```bash
+# Google Colab → Runtime → Change runtime type → T4 GPU
+cd 0X-TODO_Folder && python implementation.py
+```
 
-- Parent repo: [Large_languaage_Models](https://github.com/Ayush-2703/Large_languaage_Models)
+Optional flags near the top of `implementation.py`:
+
+```python
+RUN_PRETRAINED_SECTION = False   # set True on Colab with internet access
+```
+
+## Known Issues
+
+<!-- Only phase-specific issues. Repo-wide bugs (stale root links, progress tracker) go in the root README or an issue. -->
+
+- **TODO issue title.** What is wrong, what is affected, and what fixes it.
+- **TODO issue title.** What is wrong, what is affected, and what fixes it.
+
+## Key References
+
+**Core texts** (paraphrased throughout this phase's theory docs, cited by title and author, never block-quoted)
+
+1. TODO, Author. *Title.*
+2. TODO, Author. *Title.*
+
+**Topic 2.1 — TODO**
+
+3. Author, et al. "Paper Title." *Venue*, Year.
+
+**Topic 2.2 — TODO**
+
+4. Author, et al. "Paper Title." *Venue*, Year.
+
+**Topic 2.3 — TODO**
+
+5. Author, et al. "Paper Title." *Venue*, Year.
+
+**Topic 2.4 — TODO**
+
+6. Author, et al. "Paper Title." *Venue*, Year.
+
+**Topic 2.5 — TODO**
+
+7. Author, et al. "Paper Title." *Venue*, Year.
+
+## Navigate
+
+⬅ [Phase 01 — Review of Fundamental LLMs](../01-Fundamental_LLMs) · [Repository root](../README.md) · ➡ [Phase 03 — TODO](../03-TODO)
+
+---
+
+## License
+
+TODO: license name, linked to the repository's `LICENSE` file.
 
 ## Author
 
-**Ayush Kumar Singh**: B.Tech AI & ML, Amity University Lucknow
+**Ayush Kumar Singh** — B.Tech AI & ML, Amity University Lucknow
 [GitHub](https://github.com/Ayush-2703) · [LinkedIn](https://linkedin.com/in/ayushsingh2703)
+
+---
+
+<div align="center">
+
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0f0c29,50:302b63,100:0891B2&height=100&section=footer" width="100%"/>
+
+</div>
