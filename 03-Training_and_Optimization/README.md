@@ -1,45 +1,222 @@
-# Phase 03 — Training and Optimization of LLMs
+<div align="center">
 
-[![Status](https://img.shields.io/badge/Status-Complete-brightgreen)]()
-[![Topics](https://img.shields.io/badge/Topics-4%2F4-brightgreen)]()
+![Phase 03: Training and Optimization](https://capsule-render.vercel.app/api?type=waving&color=0:0F172A,100:EA580C&height=220&section=header&text=Phase%2003%20%C2%B7%20Training%20and%20Optimization&fontSize=34&fontColor=FFFFFF&fontAlignY=38&animation=fadeIn&desc=TODO%3A%20one-line%20tagline%20(keep%20under%2090%20characters)&descSize=15&descAlignY=62)
 
-How LLMs actually get trained and made affordable: cleaning and tokenizing raw text, shrinking what needs to be trained and stored (LoRA, quantization, pruning), teaching a model to follow human preference (RLHF's reward model, and DPO), and the two biggest memory/compute bottlenecks (gradient checkpointing, Flash Attention). Unlike Phase 02, most of this phase's techniques are algorithmic — they don't need a *specific* real pretrained checkpoint's knowledge — so most of it runs fully real and network-free.
+*Phase 03 of [`llm-mastery`](../README.md) — a four-file (theory, code, explanation, proof), Colab-first LLM curriculum*
 
-## Topics
-
-| # | Topic | What the code actually proves |
-|---|---|---|
-| 1 | [Data Collection and Preprocessing](01-Data-Collection-and-Preprocessing/) | A real 5-stage cleaning pipeline (dedup, near-dedup, quality filters, PII scrubbing) plus a real BPE tokenizer trained from scratch — 902→750 real documents, 2.96x real compression. Caught and fixed a real regex bug that silently missed one of two synthetic PII formats. |
-| 2 | [Efficient Training: LoRA, QLoRA, Quantization, Pruning](02-Efficient-Training-LoRA-QLoRA-Quantization-Pruning/) | All four techniques implemented from their actual math and applied to one real fine-tuned model: LoRA trains 2% of params for comparable accuracy; INT8/NF4 quantization give 4x/8x size reduction at zero measured accuracy loss; pruning traces the real accuracy-cliff curve. |
-| 3 | [Alignment: RLHF & DPO](03-Alignment-RLHF-and-DPO/) | A real Bradley-Terry reward model (0.587→1.000 pairwise accuracy) and real DPO training (0.275→1.000 preference accuracy, smoothly growing implicit reward margin) — including an honestly-reported length-bias artifact in the preference metric. RLHF's PPO stage is deliberately conceptual only, exactly as scoped before this repository's build began. |
-| 4 | [Memory and Computational Challenges](04-Memory-and-Computational-Challenges/) | Real peak-memory measurement (isolated subprocesses) showing gradient checkpointing's real 35% memory reduction at an 18.5% time cost, plus real attention memory/time scaling showing why avoiding the materialized attention matrix matters more as sequences grow — the general principle behind Flash Attention, honestly distinguished from its GPU-specific mechanism, which this CPU sandbox cannot run under any configuration. |
-
-## Progress
-
-| Topic | theory.md | implementation.py | explanation.md | proof.png |
-|---|---|---|---|---|
-| 01 — Data Collection & Preprocessing | ✅ | ✅ Executed | ✅ | ✅ Real |
-| 02 — Efficient Training | ✅ | ✅ Executed | ✅ | ✅ Real |
-| 03 — Alignment (RLHF & DPO) | ✅ | ✅ Executed (RM + DPO); PPO conceptual | ✅ | ✅ Real |
-| 04 — Memory & Computational Challenges | ✅ | ✅ Executed | ✅ | ✅ Real |
-
-**4 / 4 topics complete — the first fully-real phase in this repository, with zero placeholder proof images.**
-
-## A Note on Honesty Across This Phase
-
-Every technique in this phase turned out to be a genuine algorithm applicable to any pretrained-then-fine-tuned model, not a property of one *specific* real-world checkpoint — which meant this sandbox's lack of Hugging Face Hub access, the dominant constraint in Phase 02, barely mattered here. The one deliberate scope limit is RLHF's PPO stage (Topic 03): implementing rollout sampling, advantage estimation, and clipped policy updates correctly carries real risk of subtle bugs that would produce code that runs without actually demonstrating correct reinforcement learning — a worse outcome than the rigorous conceptual treatment `theory.md` gives it instead. This was decided and communicated before this repository's very first file was written, not a fallback reached for after running into difficulty.
-
-Two real bugs were also caught and fixed during this phase's development, both documented in full in their respective topics rather than silently corrected: a PII-detection regex that missed one of two synthetic phone formats (Topic 01), and an ambiguous console-output label that made a real memory *reduction* read like an increase (Topic 04). A length-bias artifact in DPO's preference metric (Topic 03) was reduced but not fully eliminated, and is reported as the real, partially-unresolved finding it is.
-
-## Setup
-
-From the repository root:
-
-```bash
-pip install -r requirements.txt
-```
-
-Topic 01 additionally installs `tokenizers` (already listed in the root `requirements.txt`) for real local BPE training — no Hugging Face Hub access required, since tokenizer *training* is a local operation. Topic 04's memory measurements launch isolated subprocesses internally; no extra setup is needed to reproduce them.
+</div>
 
 ---
-Part of the [llm-mastery](../README.md) curriculum.
+
+## Table of Contents
+
+- [Overview](#overview)
+- [The Arc of This Phase](#the-arc-of-this-phase)
+- [Topics at a Glance](#topics-at-a-glance)
+- [Folder Structure](#folder-structure)
+- [Datasets and Models Used in This Phase](#datasets-and-models-used-in-this-phase)
+- [Results Snapshot](#results-snapshot)
+- [Highlights Gallery](#highlights-gallery)
+- [Getting Started](#getting-started)
+- [Known Issues](#known-issues)
+- [Key References](#key-references)
+- [Navigate](#navigate)
+- [License](#license)
+- [Author](#author)
+
+---
+
+## Overview
+
+<!-- 2 short paragraphs, max 3 sentences each. -->
+
+**Paragraph 1 — the through-line.** TODO: the single idea every topic in this phase shares (what Phases 01 and 02 handed over, and what this phase builds on them). End with the question the phase answers.
+
+**Paragraph 2 — the standard it holds itself to.** TODO: how many topics were actually executed, which real numbers (loss, memory, throughput, wall-clock time) are in the result images, and which topic (if any) could not be run on a free Colab T4 and why. State this plainly, e.g. "N of M topics executed; Topic X needs Y and is not yet run."
+
+## The Arc of This Phase
+
+<!-- One short paragraph per topic. Each: the question it asks, the method, and a link to its row in Results Snapshot. Do NOT restate numbers here. -->
+
+**3.1 — TODO title.** The question this topic asks → how it is answered (method, data, model) → [result](#results-snapshot).
+
+**3.2 — TODO title.** Question → method → [result](#results-snapshot).
+
+**3.3 — TODO title.** Question → method → [result](#results-snapshot).
+
+**3.4 — TODO title.** Question → method → [result](#results-snapshot).
+
+**3.5 — TODO title.** Question → method → [result](#results-snapshot). Close the loop to a Phase 01 or 02 topic if one exists.
+
+## Topics at a Glance
+
+| # | Topic | Folder | What the code actually proves |
+|---|-------|--------|--------------------------------|
+| 1 | TODO | [`01-TODO_Folder`](01-TODO_Folder) | One-line, evidence-style claim |
+| 2 | TODO | [`02-TODO_Folder`](02-TODO_Folder) | One-line, evidence-style claim |
+| 3 | TODO | [`03-TODO_Folder`](03-TODO_Folder) | One-line, evidence-style claim |
+| 4 | TODO | [`04-TODO_Folder`](04-TODO_Folder) | One-line, evidence-style claim |
+| 5 | TODO | [`05-TODO_Folder`](05-TODO_Folder) | One-line, evidence-style claim |
+
+Every topic follows the repository's four-file structure: `README.md` (theory), `implementation.py`, `explanation.md`, and a result image under `Image/`. See [Known Issues](#known-issues) for any topic where a piece is missing.
+
+## Folder Structure
+
+```
+03-Training_and_Optimization/
+├── README.md                          (this file)
+│
+├── 01-TODO_Folder/
+│   ├── README.md              — theory: TODO
+│   ├── implementation.py      — TODO: what it trains / measures
+│   ├── explanation.md         — TODO: line-by-line walkthrough
+│   └── Image/
+│       └── TODO.png
+│
+├── 02-TODO_Folder/
+│   ├── README.md              — theory: TODO
+│   ├── implementation.py      — TODO
+│   ├── explanation.md
+│   └── Image/
+│       └── TODO.png
+│
+├── 03-TODO_Folder/
+│   └── ...
+├── 04-TODO_Folder/
+│   └── ...
+└── 05-TODO_Folder/
+    └── ...
+```
+
+## Datasets and Models Used in This Phase
+
+| Topic | Data / model | Notes |
+|-------|--------------|-------|
+| 3.1 | TODO dataset (size, split) · TODO model (params, checkpoint) | One line: hardware, runtime, anything unusual |
+| 3.2 | TODO | TODO |
+| 3.3 | TODO | TODO |
+| 3.4 | TODO | TODO |
+| 3.5 | TODO | TODO |
+
+## Results Snapshot
+
+<!-- Single canonical results table. Numbers copied from the committed result image or explanation.md, with units. Mark unexecuted topics honestly. -->
+
+| Topic | Headline result |
+|-------|------------------|
+| 3.1 | **Metric = value** (n params, t seconds, hardware). One sentence on what it means. |
+| 3.2 | **Metric = value**. One sentence on what it means. |
+| 3.3 | No results yet — `implementation.py` written, not yet executed (reason). See [Known Issues](#known-issues). |
+| 3.4 | **Metric = value**. Flag any anomaly honestly. |
+| 3.5 | **Metric = value**. One sentence on what it means. |
+
+## Highlights Gallery
+
+<div align="center">
+
+<table>
+<tr>
+<td width="50%"><img src="01-TODO_Folder/Image/TODO.png" alt="TODO alt text"/><br/><sub><b>3.1</b> — one-line caption</sub></td>
+<td width="50%"><img src="02-TODO_Folder/Image/TODO.png" alt="TODO alt text"/><br/><sub><b>3.2</b> — one-line caption</sub></td>
+</tr>
+<tr>
+<td width="50%"><img src="04-TODO_Folder/Image/TODO.png" alt="TODO alt text"/><br/><sub><b>3.4</b> — one-line caption</sub></td>
+<td width="50%"><img src="05-TODO_Folder/Image/TODO.png" alt="TODO alt text"/><br/><sub><b>3.5</b> — one-line caption</sub></td>
+</tr>
+</table>
+
+</div>
+
+> Spaces in image filenames must be URL-encoded (`%20`) in `src`.
+
+## Getting Started
+
+Repo-wide setup, from the repository root:
+
+```bash
+git clone https://github.com/Ayush-2703/Large_languaage_Models.git
+cd Large_languaage_Models
+
+python -m venv venv
+source venv/bin/activate          # Windows: venv\Scripts\activate
+
+pip install -r requirements.txt
+cd 03-Training_and_Optimization
+```
+
+Each topic's `implementation.py` is self-contained and runs standalone:
+
+```bash
+cd 01-TODO_Folder && python implementation.py && cd ..    # local, CPU is fine
+cd 02-TODO_Folder && python implementation.py && cd ..    # Colab T4 GPU recommended
+```
+
+Topics needing a GPU or Hugging Face Hub access (TODO: list them):
+
+```bash
+# Google Colab → Runtime → Change runtime type → T4 GPU
+cd 0X-TODO_Folder && python implementation.py
+```
+
+Optional flags near the top of `implementation.py`:
+
+```python
+RUN_PRETRAINED_SECTION = False   # set True on Colab with internet access
+```
+
+## Known Issues
+
+<!-- Only phase-specific issues. Repo-wide bugs (stale root links, progress tracker) go in the root README or an issue. -->
+
+- **TODO issue title.** What is wrong, what is affected, and what fixes it.
+- **TODO issue title.** What is wrong, what is affected, and what fixes it.
+
+## Key References
+
+**Core texts** (paraphrased throughout this phase's theory docs, cited by title and author, never block-quoted)
+
+1. TODO, Author. *Title.*
+2. TODO, Author. *Title.*
+
+**Topic 3.1 — TODO**
+
+3. Author, et al. "Paper Title." *Venue*, Year.
+
+**Topic 3.2 — TODO**
+
+4. Author, et al. "Paper Title." *Venue*, Year.
+
+**Topic 3.3 — TODO**
+
+5. Author, et al. "Paper Title." *Venue*, Year.
+
+**Topic 3.4 — TODO**
+
+6. Author, et al. "Paper Title." *Venue*, Year.
+
+**Topic 3.5 — TODO**
+
+7. Author, et al. "Paper Title." *Venue*, Year.
+
+## Navigate
+
+⬅ [Phase 02 — Generative AI with LLMs](../02-Generative_AI_with_LLMs) · [Repository root](../README.md) · ➡ [Phase 04 — TODO](../04-TODO)
+
+---
+
+## License
+
+TODO: license name, linked to the repository's `LICENSE` file.
+
+## Author
+
+**Ayush Kumar Singh** — B.Tech AI & ML, Amity University Lucknow
+[GitHub](https://github.com/Ayush-2703) · [LinkedIn](https://linkedin.com/in/ayushsingh2703)
+
+---
+
+<div align="center">
+
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0f0c29,50:302b63,100:EA580C&height=100&section=footer" width="100%"/>
+
+</div>
