@@ -1,6 +1,6 @@
-<div align="center">
+/<div align="center">
 
-![Phase 03: Training and Optimization](https://capsule-render.vercel.app/api?type=waving&color=0:0F172A,100:EA580C&height=220&section=header&text=Phase%2003%20%C2%B7%20Training%20and%20Optimization&fontSize=34&fontColor=FFFFFF&fontAlignY=38&animation=fadeIn&desc=TODO%3A%20one-line%20tagline%20(keep%20under%2090%20characters)&descSize=15&descAlignY=62)
+![Phase 03: Training and Optimization](https://capsule-render.vercel.app/api?type=waving&color=0:18181B,100:3F3F46&height=220&section=header&text=Phase%2003%20%C2%B7%20Training%20and%20Optimization&fontSize=34&fontColor=FFFFFF&fontAlignY=38&animation=fadeIn&desc=TODO%3A%20one-line%20tagline%20(keep%20under%2090%20characters)&descSize=15&descAlignY=62)
 
 *Phase 03 of [`llm-mastery`](../README.md) — a four-file (theory, code, explanation, proof), Colab-first LLM curriculum*
 
@@ -217,6 +217,6 @@ TODO: license name, linked to the repository's `LICENSE` file.
 
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0f0c29,50:302b63,100:EA580C&height=100&section=footer" width="100%"/>
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:18181B,100:3F3F46&height=100&section=footer" width="100%"/>
 
 </div>
