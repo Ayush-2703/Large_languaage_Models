@@ -1,6 +1,6 @@
 <div align="center">
 
-![Phase 5: Frontiers and Future of LLMs](https://capsule-render.vercel.app/api?type=waving&color=0:0F172A,100:7C3AED&height=220&section=header&text=Phase%2005%20%C2%B7%20Frontiers%20and%20Future%20of%20LLMs&fontSize=34&fontColor=FFFFFF&fontAlignY=38&animation=fadeIn&desc=Emergence%2C%20many%20languages%2C%20scarce%20resources%2C%20steerability%2C%20and%20life%20beyond%20text&descSize=15&descAlignY=62)
+![Phase 5: Frontiers and Future of LLMs](https://capsule-render.vercel.app/api?type=waving&color=0:18181B,100:3F3F46&height=220&section=header&text=Phase%2005%20%C2%B7%20Frontiers%20and%20Future%20of%20LLMs&fontSize=34&fontColor=FFFFFF&fontAlignY=38&animation=fadeIn&desc=Emergence%2C%20many%20languages%2C%20scarce%20resources%2C%20steerability%2C%20and%20life%20beyond%20text&descSize=15&descAlignY=62)
 
 ![Python](https://img.shields.io/badge/python-3.10%2B-3776AB?logo=python&logoColor=white)
 ![PyTorch](https://img.shields.io/badge/PyTorch-2.x-EE4C2C?logo=pytorch&logoColor=white)
@@ -156,9 +156,8 @@ These anchor the topics planned above; each topic's own `README.md` will cite th
 
 ---
 
-
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:24243e,50:302b63,100:0f0c29&height=100&section=footer" width="100%"/>
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:18181B,100:3F3F46&height=100&section=footer" width="100%"/>
 
 </div>
