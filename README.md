@@ -246,6 +246,6 @@ You're free to use, fork, and build on this for personal and commercial projects
 **If this repository helped you, please consider giving it a ⭐**  
 *It takes 2 seconds and helps others discover it.*
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0f0c29,50:302b63&height=100&section=footer" width="100%"/>
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0f0c29,50:302b63,100:0891B2&height=100&section=footer" width="100%"/>
 
 </div>
