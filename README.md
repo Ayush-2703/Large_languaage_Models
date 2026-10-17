@@ -1,6 +1,6 @@
 <div align="center">
   
-![LLM Mastery: A Hands-On Curriculum for Large Language Models](https://capsule-render.vercel.app/api?type=waving&color=0:0F172A,100:7C3AED&height=220&section=header&text=LLM%20Mastery&fontSize=64&fontColor=FFFFFF&fontAlignY=36&animation=fadeIn&desc=A%20comprehensive%20blueprint%20for%20Mastering%20Large%20Language%20Models&descSize=18&descAlignY=58)
+![LLM Mastery: A Hands-On Curriculum for Large Language Models](https://capsule-render.vercel.app/api?type=waving&color=0:0F172A,100:0891B2&height=220&section=header&text=LLM%20Mastery&fontSize=64&fontColor=FFFFFF&fontAlignY=36&animation=fadeIn&desc=A%20comprehensive%20blueprint%20for%20Mastering%20Large%20Language%20Models&descSize=18&descAlignY=58)
  
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://readme-typing-svg.demolab.com/?font=Fira+Code&size=20&duration=2800&pause=900&color=C4B5FD&center=true&vCenter=true&width=600&lines=22+Topics,+5+Phases,+One+Repo;Theory,+Code,+Explanation,+Proof;Every+Script+Runs+on+a+Free+T4;Small+Models.+Full+Understanding." />
@@ -246,6 +246,6 @@ You're free to use, fork, and build on this for personal and commercial projects
 **If this repository helped you, please consider giving it a ⭐**  
 *It takes 2 seconds and helps others discover it.*
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:24243e,50:302b63,100:0f0c29&height=100&section=footer" width="100%"/>
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0f0c29,50:302b63&height=100&section=footer" width="100%"/>
 
 </div>
