@@ -67,7 +67,7 @@ Most LLM curricula fail in one of two places: all theory and no working code, or
 flowchart LR
     A["theory.md<br/>the math"] --> B["implementation.py<br/>the code"]
     B --> C["explanation.md<br/>the why"]
-    C --> D["proof.png<br/>the evidence"]
+    C --> D["Image<br/>the evidence"]
 ```
 
 | File | What it answers |
@@ -75,7 +75,7 @@ flowchart LR
 | `theory.md` | What's the math, and where does it come from? |
 | `implementation.py` | Can I actually run this myself? |
 | `explanation.md` | Why does the code work the way it does? |
-| `proof.png` | Did it really run, or is this just claimed? |
+| `Image` | Did it really run, or is this just claimed? |
 
 The last one is the strict part. Three topics in this curriculum are conceptual rather than experimental (History and Evolution of Language Models, Ethical Considerations in Large-Scale AI, Emergent Behaviors and Scaling Hypotheses), and even they don't get a pass: `proof.png` for those is a composite figure pairing a conceptual diagram with a real, code-generated comparison chart. Not a static illustration standing in for missing work.
 
@@ -168,7 +168,7 @@ Each phase folder contains its own topic folders, numbered `01`, `02`, … start
     ├── theory.md           # Math intuition, architecture breakdown, citations
     ├── implementation.py   # Runnable PyTorch + Hugging Face code
     ├── explanation.md      # Line-by-line walkthrough of the code's why and what
-    └── proof.png           # Generated artifact proving the code ran end to end
+    └── Image               # Generated artifact proving the code ran end to end
 ```
 
 ## Scope Notes
@@ -182,7 +182,7 @@ Each phase folder contains its own topic folders, numbered `01`, `02`, … start
 
 ```bash
 git clone https://github.com/Ayush-2703/llm-mastery.git
-cd llm-mastery
+cd Large_language_models
 python -m venv venv
 source venv/bin/activate        # Windows: venv\Scripts\activate
 pip install -r requirements.txt
