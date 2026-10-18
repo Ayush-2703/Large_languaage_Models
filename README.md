@@ -102,11 +102,11 @@ flowchart LR
 
 | # | Topic | Folder |
 |---|---|---|
-| 1 | History and Evolution of Language Models | [`01-History-and-Evolution-of-Language-Models`](01-Review-of-Fundamental-LLMs/01-History-and-Evolution-of-Language-Models/) |
-| 2 | Transformer Architecture and Self-Attention Mechanism (QKV math) | [`02-Transformer-Architecture-and-Self-Attention`](01-Review-of-Fundamental-LLMs/02-Transformer-Architecture-and-Self-Attention/) |
-| 3 | Pretraining vs. Fine-Tuning Paradigms | [`03-Pretraining-vs-Fine-Tuning-Paradigms`](01-Review-of-Fundamental-LLMs/03-Pretraining-vs-Fine-Tuning-Paradigms/) |
-| 4 | Scaling Laws and Model Efficiency | [`04-Scaling-Laws-and-Model-Efficiency`](01-Review-of-Fundamental-LLMs/04-Scaling-Laws-and-Model-Efficiency/) |
-| 5 | Ethical Considerations in Large-Scale AI | [`05-Ethical-Considerations-in-Large-Scale-AI`](01-Review-of-Fundamental-LLMs/05-Ethical-Considerations-in-Large-Scale-AI/) |
+| 1 | History and Evolution of Language Models | [`01-History-and-Evolution-of-Language-Models`](https://github.com/Ayush-2703/Large_languaage_Models/tree/main/01-Fundamental_LLMs/01-History_and_Evolution) |
+| 2 | Transformer Architecture and Self-Attention Mechanism (QKV math) | [`02-Transformer-Architecture-and-Self-Attention`](https://github.com/Ayush-2703/Large_languaage_Models/tree/main/01-Fundamental_LLMs/02-Transformer_and_Self_Attention) |
+| 3 | Pretraining vs. Fine-Tuning Paradigms | [`03-Pretraining-vs-Fine-Tuning-Paradigms`](https://github.com/Ayush-2703/Large_languaage_Models/tree/main/01-Fundamental_LLMs/03-Pretraining_vs_Fine_Tuning) |
+| 4 | Scaling Laws and Model Efficiency | [`04-Scaling-Laws-and-Model-Efficiency`](https://github.com/Ayush-2703/Large_languaage_Models/tree/main/01-Fundamental_LLMs/04-Scaling_Laws_and_Model_Efficiency) |
+| 5 | Ethical Considerations in Large-Scale AI | [`05-Ethical-Considerations-in-Large-Scale-AI`](https://github.com/Ayush-2703/Large_languaage_Models/tree/main/01-Fundamental_LLMs/05-Ethical_Considerations) |
 
 ### 🎛️ Phase 02 · Generative AI with LLMs
 
@@ -181,7 +181,7 @@ Each phase folder contains its own topic folders, numbered `01`, `02`, … start
 ## Getting Started
 
 ```bash
-git clone https://github.com/Ayush-2703/llm-mastery.git
+git clone https://github.com/Ayush-2703/Large_Language_Models.git
 cd Large_language_models
 python -m venv venv
 source venv/bin/activate        # Windows: venv\Scripts\activate
