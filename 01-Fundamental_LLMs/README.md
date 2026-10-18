@@ -55,7 +55,7 @@ This phase holds itself to an unusually strict standard for a five-topic review:
 | 4 | Scaling Laws and Model Efficiency | [`04-Scaling_Laws_and_Model_Efficiency`](04-Scaling_Laws_and_Model_Efficiency) | Trains 5 model sizes (6K to 1.4M params) from scratch and fits a real power law to measured loss, plus the training-cost trade-off scale doesn't show for free |
 | 5 | Ethical Considerations in Large-Scale AI | [`05-Ethical_Considerations`](05-Ethical_Considerations) | Trains word embeddings on a corpus with a known, controlled demographic co-occurrence rate and measures the resulting bias with a real WEAT-style effect size |
 
-Every topic follows this repository's four-file structure — `README.md` (the theory doc; this repo's root describes it as `theory.md`, but every actual topic folder uses `README.md`), `implementation.py`, `explanation.md`, and a result image under `Image/` (the root's stated single `proof.png` is, in practice, one descriptively-named `.png` per topic) — see [Known Issues](#known-issues) for the two topics where one of those four pieces is genuinely missing.
+Every topic follows this repository's four-file structure — `README.md` (the theory doc; this repo's root describes it as `theory.md`, but every actual topic folder uses `README.md`), `implementation.py`, `explanation.md`, and a result image under `Image/` (the root's stated single `Image` is, in practice, one descriptively-named `.png` per topic) — see [Known Issues](#known-issues) for the two topics where one of those four pieces is genuinely missing.
 
 ## Folder Structure
 
