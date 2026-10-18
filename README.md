@@ -195,12 +195,12 @@ pip install -r requirements.txt
 
 | Phase | Topics | Completed | Progress |
 |---|---|---|---|
-| 01 · Review of Fundamental LLMs | 5 | 0 | `░░░░░░░░░░` 0% |
-| 02 · Generative AI with LLMs | 4 | 0 | `░░░░░░░░░░` 0% |
-| 03 · Training and Optimization of LLMs | 4 | 0 | `░░░░░░░░░░` 0% |
-| 04 · Applications and Use Cases | 4 | 0 | `░░░░░░░░░░` 0% |
-| 05 · Frontiers and Future of LLMs | 5 | 0 | `░░░░░░░░░░` 0% |
-| **Total** | **22** | **0** | `░░░░░░░░░░` **0%** |
+| 01 · Review of Fundamental LLMs | 5 | 5 | **100%** |
+| 02 · Generative AI with LLMs | 4 | 4 | **100%** |
+| 03 · Training and Optimization of LLMs | 4 | 4 | **100%** |
+| 04 · Applications and Use Cases | 4 | 4 | **100%** |
+| 05 · Frontiers and Future of LLMs | 5 | 5 | **100%** |
+| **Total** | **22** | **22** | **100%** |
 
 Each topic's folder-level status lives in its own `STATUS.md`, updated as that topic's four files ship.
 
