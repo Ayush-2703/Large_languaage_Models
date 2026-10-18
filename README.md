@@ -44,9 +44,9 @@ Twenty-two topics. Five phases. One free-tier Colab T4 GPU per topic, under an h
 
 This repository covers large language models end to end across five phases and twenty-two topics: architectural fundamentals, generative fine-tuning, efficient training and alignment, applied systems like RAG, and where the field is headed next.
 
-It's being built incrementally, phase by phase. The folder skeleton below is complete; the `theory.md`, `implementation.py`, `explanation.md`, and `proof.png` for each topic ship in subsequent passes, tracked in that folder's own `STATUS.md`.
+It's being built incrementally, phase by phase. The folder skeleton below is complete; the `theory.md`, `implementation.py`, `explanation.md`, and `Image` for each topic ship in subsequent passes, tracked in that folder's own `STATUS.md`.
 
-Built to the same standard as its companion repository, [`deep-learning-mastery`](https://github.com/Ayush-2703/deep-learning-mastery).
+Built to the same standard as its companion repository, [`Deep_Learning`](https://github.com/Ayush-2703/Deep_Learning).
 
 **At a glance**
 
@@ -236,6 +236,7 @@ You're free to use, fork, and build on this for personal and commercial projects
 
 [![GitHub](https://img.shields.io/badge/GitHub-Ayush%20Kumar%20Singh-181717?style=for-the-badge&logo=github)](https://github.com/Ayush-2703)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Ayush%20Kumar%20Singh-0A66C2?style=for-the-badge&logo=linkedin)](https://linkedin.com/in/ayushsingh2703)
+[![Email](https://img.shields.io/badge/Email-Ayush%20Kumar%20Singh-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:ab49ayush@gmail.com)
 
 </div>
 
