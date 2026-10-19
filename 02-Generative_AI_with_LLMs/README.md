@@ -202,27 +202,6 @@ Found while documenting this phase, for anyone relying on it:
 
 ---
 
-## License
-
-Distributed under the **MIT License**. See [`LICENSE`](../LICENSE) for details.
-
-## Author
-
-**Ayush Kumar Singh** — B.Tech AI & ML, Amity University Lucknow
-[GitHub](https://github.com/Ayush-2703) · [LinkedIn](https://linkedin.com/in/ayushsingh2703)
-
----
-
-<div align="center">
-
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:18181B,100:3F3F46&height=100&section=footer" width="100%"/>
-
-</div>
-
-⬅ [Phase 01 — Review of Fundamental LLMs](../01-Fundamental_LLMs) · [Repository root](../README.md) · ➡ [Phase 03 — TODO](../03-TODO)
-
----
-
 <div align="center">
 
 <img src="https://capsule-render.vercel.app/api?type=waving&color=0:18181B,100:3F3F46&height=100&section=footer" width="100%"/>
