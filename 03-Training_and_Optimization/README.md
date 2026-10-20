@@ -133,8 +133,6 @@ Numbers below come from each topic's committed result image or its own measured-
 
 </div>
 
-> Spaces in image filenames must be URL-encoded (`%20`) in `src`. The Topic 3.4 filename contains `&`, which is written as `%26` above.
-
 ## Getting Started
 
 Repo-wide setup, from the repository root:
