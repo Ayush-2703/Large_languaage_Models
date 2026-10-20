@@ -116,7 +116,6 @@ Numbers below come from each topic's committed result image or its own measured-
 
 </div>
 
-> Spaces in image filenames must be URL-encoded (`%20`) in `src`. None of this phase's current filenames contain spaces.
 
 ## Getting Started
 
