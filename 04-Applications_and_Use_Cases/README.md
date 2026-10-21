@@ -2,12 +2,6 @@
 
 ![Phase 04: Applications and Use Cases](https://capsule-render.vercel.app/api?type=waving&color=0:18181B,100:3F3F46&height=220&section=header&text=Phase%2004%20%C2%B7%20Applications%20and%20Use%20Cases&fontSize=34&fontColor=FFFFFF&fontAlignY=38&animation=fadeIn&desc=Retrieval%2C%20tool%20use%2C%20in-context%20learning%2C%20and%20dialogue%2C%20measured%20on%20small%20models&descSize=15&descAlignY=62)
 
-![Python](https://img.shields.io/badge/python-3.10%2B-3776AB?logo=python&logoColor=white)
-![PyTorch](https://img.shields.io/badge/PyTorch-2.x-EE4C2C?logo=pytorch&logoColor=white)
-![FAISS](https://img.shields.io/badge/FAISS-CPU-0467DF)
-![Status](https://img.shields.io/badge/status-4%20of%204%20topics%20executed-brightgreen)
-![License: MIT](https://img.shields.io/badge/license-MIT-green)
-
 *Phase 04 of [`Large_languaage_Models`](../README.md) — a four-file (theory, code, explanation, Image), from-scratch LLM curriculum*
 
 </div>
