@@ -1,5 +1,5 @@
 # 5.1 — Emergent Behaviors and Scaling Hypotheses
-
+ 
 ## 1. What "emergent" means in the LLM literature
 
 An ability is usually called *emergent* when it is essentially absent in
