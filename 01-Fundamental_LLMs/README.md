@@ -1,7 +1,6 @@
 <div align="center">
 
-![Phase 1: Review of Fundamental LLMs](https://capsule-render.vercel.app/api?type=waving&color=0:18181B,100:3F3F46&height=220&section=header&text=Phase%2001%20%C2%B7%20Review%20of%20Fundamental%20LLMs&fontSize=34&fontColor=FFFFFF&fontAlignY=38&animation=fadeIn&desc=Four%20eras%20of%20language%20modeling%2C%20one%20attention%20formula%2C%20and%20where%20bias%20actually%20enters&descSize=15&descAlignY=62)
-
+![Phase 1: Review of Fundamental LLMs](https://capsule-render.vercel.app/api?type=waving&color=0:18181B,100:3F3F46&height=220&section=header&text=Phase%2001%20%C2%B7%20Review%20of%20Fundamental%20LLMs&fontSize=34&fontColor=FFFFFF&fontAlignY=38&animation=fadeIn&desc=Large%20Languaage%20Models&descSize=15&descAlignY=62)
 
 *Phase 01 of [`llm-mastery`](../README.md) — a four-file (theory, code, explanation, Image), Colab-first LLM curriculum*
 
