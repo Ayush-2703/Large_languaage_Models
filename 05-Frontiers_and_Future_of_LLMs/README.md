@@ -5,7 +5,7 @@
 ![Python](https://img.shields.io/badge/python-3.10%2B-3776AB?logo=python&logoColor=white)
 ![PyTorch](https://img.shields.io/badge/PyTorch-2.x-EE4C2C?logo=pytorch&logoColor=white)
 ![Hugging Face](https://img.shields.io/badge/Hugging%20Face-Transformers-FFD21E?logo=huggingface&logoColor=000000)
-![Status](https://img.shields.io/badge/status-planned%20%2F%20not%20yet%20implemented-yellow)
+![Status](https://img.shields.io/badge/status-Completed-yellow)
 ![License: MIT](https://img.shields.io/badge/license-MIT-green)
 
 *Phase 05 of [`Large_languaage_Models`](../README.md) — a four-file (theory, code, explanation, proof), Colab-first LLM curriculum*
