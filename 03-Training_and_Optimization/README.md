@@ -1,6 +1,6 @@
 <div align="center">
 
-![Phase 03: Training and Optimization](https://capsule-render.vercel.app/api?type=waving&color=0:18181B,100:3F3F46&height=220&section=header&text=Phase%2003%20%C2%B7%20Training%20and%20Optimization&fontSize=34&fontColor=FFFFFF&fontAlignY=38&animation=fadeIn&desc=Data%20pipelines%2C%20LoRA%20and%20QLoRA%2C%20DPO%20alignment%2C%20and%20memory%20trade-offs%2C%20measured&descSize=15&descAlignY=62)
+![Phase 03: Training and Optimization](https://capsule-render.vercel.app/api?type=waving&color=0:18181B,100:3F3F46&height=220&section=header&text=Phase%2003%20%C2%B7%20Training%20and%20Optimization&fontSize=34&fontColor=FFFFFF&fontAlignY=38&animation=fadeIn&desc=Large%20Languaage%20Models&descSize=25&descAlignY=62)
 
 *Phase 03 of [`llm-mastery`](../README.md) — a four-file (theory, code, explanation, Image), from-scratch LLM curriculum*
 
