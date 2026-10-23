@@ -1,6 +1,6 @@
 <div align="center">
 
-![Phase 04: Applications and Use Cases](https://capsule-render.vercel.app/api?type=waving&color=0:18181B,100:3F3F46&height=220&section=header&text=Phase%2004%20%C2%B7%20Applications%20and%20Use%20Cases&fontSize=34&fontColor=FFFFFF&fontAlignY=38&animation=fadeIn&desc=Retrieval%2C%20tool%20use%2C%20in-context%20learning%2C%20and%20dialogue%2C%20measured%20on%20small%20models&descSize=15&descAlignY=62)
+![Phase 04: Applications and Use Cases](https://capsule-render.vercel.app/api?type=waving&color=0:18181B,100:3F3F46&height=220&section=header&text=Phase%2004%20%C2%B7%20Applications%20and%20Use%20Cases&fontSize=34&fontColor=FFFFFF&fontAlignY=38&animation=fadeIn&desc=Large%20Languaage%20Models&descSize=25&descAlignY=62)
 
 *Phase 04 of [`Large_languaage_Models`](../README.md) — a four-file (theory, code, explanation, Image), from-scratch LLM curriculum*
 
