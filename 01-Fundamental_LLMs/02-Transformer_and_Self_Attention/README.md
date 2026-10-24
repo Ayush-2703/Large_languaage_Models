@@ -1,4 +1,8 @@
-# Transformer Architecture and Self-Attention Mechanism
+<div align="center">
+
+![Topic: Transformer Architecture and Self-Attention Mechanism](https://capsule-render.vercel.app/api?type=waving&color=0:18181B,100:3F3F46&height=220&section=header&text=Topic%20Transformer%20Architecture%20and%20Self-Attention%20Mechanism&fontSize=34&fontColor=FFFFFF&fontAlignY=38&animation=fadeIn&desc=Large%20Languaage%20Models&descSize=25&descAlignY=62)
+
+</div>
 
 
 ## 1. The QKV Formula
@@ -88,3 +92,11 @@ None of these change the QKV formula itself — they change how efficiently it i
 - Vaswani, Ashish, et al. "Attention Is All You Need." *NeurIPS*, 2017.
 - Su, Jianlin, et al. "RoFormer: Enhanced Transformer with Rotary Position Embedding." 2021.
 - Dao, Tri, et al. "FlashAttention: Fast and Memory-Efficient Exact Attention with IO-Awareness." *NeurIPS*, 2022.
+
+---
+
+<div align="center">
+
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:18181B,100:3F3F46&height=100&section=footer" width="100%"/>
+
+</div>
