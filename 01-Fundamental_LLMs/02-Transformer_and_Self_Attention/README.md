@@ -1,5 +1,6 @@
 # Transformer Architecture and Self-Attention Mechanism
 
+
 ## 1. The QKV Formula
 
 Every attention mechanism in every Transformer traces back to one equation, introduced by Vaswani et al. in "Attention Is All You Need" (2017):
