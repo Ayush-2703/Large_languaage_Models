@@ -122,3 +122,11 @@ Every one of these models, including the from-scratch ones trained here, reprodu
 - Vaswani, Ashish, et al. "Attention Is All You Need." *NeurIPS*, 2017.
 - Radford, Alec, et al. "Improving Language Understanding by Generative Pre-Training." OpenAI, 2018.
 - Devlin, Jacob, et al. "BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding." *NAACL*, 2019.
+
+---
+
+<div align="center">
+
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:18181B,100:3F3F46&height=100&section=footer" width="100%"/>
+
+</div>
