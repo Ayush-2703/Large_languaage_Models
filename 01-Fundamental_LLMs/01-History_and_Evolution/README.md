@@ -1,4 +1,8 @@
-# History and Evolution of Language Models
+<div align="center">
+
+![Topic: History and Evolution of Language Models](https://capsule-render.vercel.app/api?type=waving&color=0:18181B,100:3F3F46&height=220&section=header&text=Topic%20History%20and%20Evolution%20of%20Language%20Models&fontSize=34&fontColor=FFFFFF&fontAlignY=38&animation=fadeIn&desc=Large%20Languaage%20Models&descSize=25&descAlignY=62)
+
+</div>
 
 ## 1. What a Language Model Actually Estimates
 
