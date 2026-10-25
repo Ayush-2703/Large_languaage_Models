@@ -8,11 +8,6 @@ Eras represented:
     3. LSTM (Hochreiter & Schmidhuber, 1997 — dominant 2014-2017)
     4. Transformer, decoder-only (Vaswani et al., 2017 — dominant today)
 
-Runs in well under a minute on CPU; well under a minute on a Colab T4.
-No Hugging Face Hub download is required — the point of this topic is the
-*architectures themselves*, trained from identical random init on identical
-data, so every checkpoint here is "pretrained" by this script, live.
-
 Data: tiny-Shakespeare (Karpathy's char-rnn corpus), ~1.1MB of public-domain
 text, fetched at runtime. Standard toy corpus for character-level LM demos.
 """
