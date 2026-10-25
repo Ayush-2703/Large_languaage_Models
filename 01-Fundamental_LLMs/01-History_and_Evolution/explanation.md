@@ -3,7 +3,7 @@
 This walks through the script section by section: what each block does, and why it's built that way rather than some simpler alternative.
 
 ## Data Loading
-
+ 
 ```python
 def load_corpus(n_chars: int = 200_000) -> str:
     with urllib.request.urlopen(CORPUS_URL, timeout=15) as resp:
