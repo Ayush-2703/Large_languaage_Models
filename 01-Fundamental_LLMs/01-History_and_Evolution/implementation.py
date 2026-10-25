@@ -1,11 +1,6 @@
 """
 Topic — History and Evolution of Language Models
 =========================================================
-Trains four language models that represent four eras of NLP history on the
-*same* tiny character-level corpus, then compares them on held-out
-perplexity. This turns "language models got better over time" into a single
-reproducible number per architecture rather than a claim you have to take on
-faith.
 
 Eras represented:
     1. N-gram (count-based, pre-2000s statistical NLP)
