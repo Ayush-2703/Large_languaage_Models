@@ -107,7 +107,7 @@ def train_neural(model: nn.Module, steps: int = 800, lr: float = 3e-3) -> float:
 
 **Why 800 steps specifically:** This was tuned once, deliberately, and the reasoning is worth stating plainly: an earlier run at 400 steps left the Transformer noticeably behind the LSTM, and the question was whether that gap reflected the architecture or simply insufficient training. Raising the step count uniformly across all three neural models — not just the Transformer — closed most of the gap without giving any single model a discovery advantage. The result at 800 steps (Transformer and LSTM landing close together, LSTM narrowly ahead) is the real, reproducible output of that fair comparison, not a cherry-picked number. Why that specific outcome is expected, not a bug, is explained in `theory.md` §7.
 
-## `proof.png` Generation
+## `Image` Generation
 
 ```python
 fig, (ax_top, ax_bot) = plt.subplots(2, 1, figsize=(10, 9), gridspec_kw={"height_ratios": [1, 1.4]})
