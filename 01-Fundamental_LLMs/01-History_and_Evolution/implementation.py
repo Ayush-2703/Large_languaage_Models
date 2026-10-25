@@ -1,5 +1,5 @@
 """
-Topic 01.01 — History and Evolution of Language Models
+Topic — History and Evolution of Language Models
 =========================================================
 Trains four language models that represent four eras of NLP history on the
 *same* tiny character-level corpus, then compares them on held-out
