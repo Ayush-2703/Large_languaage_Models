@@ -1,5 +1,5 @@
 """
-Topic 01.02 — Transformer Architecture and Self-Attention Mechanism
+Topic — Transformer Architecture and Self-Attention Mechanism
 =======================================================================
 Implements scaled dot-product and multi-head attention entirely from the
 QKV formula, then proves correctness by checking it numerically against
