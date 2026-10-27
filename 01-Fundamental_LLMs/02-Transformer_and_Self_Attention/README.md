@@ -1,6 +1,6 @@
 <div align="center">
 
-![Topic: Transformer Architecture and Self-Attention Mechanism](https://capsule-render.vercel.app/api?type=waving&color=0:18181B,100:3F3F46&height=200&section=header&text=Topic%20Transformer%20Architecture%20and%20Self-Attention%20Mechanism&fontSize=25&fontColor=FFFFFF&fontAlignY=38&animation=fadeIn&desc=Large%20Languaage%20Models&descSize=20&descAlignY=62)
+![Topic: Transformer Architecture and Self-Attention Mechanism](https://capsule-render.vercel.app/api?type=waving&color=0:18181B,100:3F3F46&height=200&section=header&text=Topic:%20Transformer%20Architecture%20and%20Self-Attention%20Mechanism&fontSize=25&fontColor=FFFFFF&fontAlignY=38&animation=fadeIn&desc=Large%20Languaage%20Models&descSize=20&descAlignY=62)
 
 </div>
 
