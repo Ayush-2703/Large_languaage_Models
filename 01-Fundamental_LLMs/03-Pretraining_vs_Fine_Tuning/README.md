@@ -1,4 +1,9 @@
-# Pretraining vs. Fine-Tuning Paradigms
+<div align="center">
+
+![Topic: Pretraining vs Fine-Tuning Paradigms](https://capsule-render.vercel.app/api?type=waving&color=0:18181B,100:3F3F46&height=200&section=header&text=Topic:%20Pretraining%20vs%20Fine%20Tuning%20Paradigms&fontSize=25&fontColor=FFFFFF&fontAlignY=38&animation=fadeIn&desc=Large%20Languaage%20Models&descSize=20&descAlignY=62)
+
+</div>
+
 
 ## 1. Two Separate Questions
 
@@ -59,3 +64,11 @@ The frozen-probe-vs-full-fine-tune-vs-no-pretraining comparison here, at DistilB
 - Raffel, Colin, et al. "Exploring the Limits of Transfer Learning with a Unified Text-to-Text Transformer." *JMLR*, 2020.
 - Howard, Jeremy, and Sebastian Ruder. "Universal Language Model Fine-tuning for Text Classification." *ACL*, 2018.
 - Sanh, Victor, et al. "DistilBERT, a distilled version of BERT: smaller, faster, cheaper and lighter." 2019.
+
+---
+
+<div align="center">
+
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:18181B,100:3F3F46&height=100&section=footer" width="100%"/>
+
+</div>
