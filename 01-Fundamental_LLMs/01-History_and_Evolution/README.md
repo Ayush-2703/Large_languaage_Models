@@ -1,6 +1,6 @@
 <div align="center">
 
-![Topic: History and Evolution of Language Models](https://capsule-render.vercel.app/api?type=waving&color=0:18181B,100:3F3F46&height=200&section=header&text=Topic%20History%20and%20Evolution%20of%20Language%20Models&fontSize=25&fontColor=FFFFFF&fontAlignY=38&animation=fadeIn&desc=Large%20Languaage%20Models&descSize=20&descAlignY=62)
+![Topic: History and Evolution of Language Models](https://capsule-render.vercel.app/api?type=waving&color=0:18181B,100:3F3F46&height=200&section=header&text=Topic:%20History%20and%20Evolution%20of%20Language%20Models&fontSize=25&fontColor=FFFFFF&fontAlignY=38&animation=fadeIn&desc=Large%20Languaage%20Models&descSize=20&descAlignY=62)
 
 </div>
 
