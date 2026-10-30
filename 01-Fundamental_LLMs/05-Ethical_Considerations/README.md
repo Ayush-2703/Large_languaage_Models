@@ -1,4 +1,9 @@
-# Ethical Considerations in Large-Scale AI
+<div align="center">
+
+![Topic: Ethical Considerations in Large-Scale AI](https://capsule-render.vercel.app/api?type=waving&color=0:18181B,100:3F3F46&height=200&section=header&text=Topic:%20Ethical%20Considerations%20in%20Large%20Scale%20AI&fontSize=25&fontColor=FFFFFF&fontAlignY=38&animation=fadeIn&desc=Large%20Languaage%20Models&descSize=20&descAlignY=62)
+</div>
+
+---
 
 ## 1. The Core Mechanism: Bias Is a Learning Outcome, Not a Bug
 
@@ -61,3 +66,11 @@ The WEAT-style measurement in `implementation.py` uses 6 target words per catego
 - Bolukbasi, Tolga, et al. "Man is to Computer Programmer as Woman is to Homemaker? Debiasing Word Embeddings." *NeurIPS*, 2016.
 - Caliskan, Aylin, Joanna J. Bryson, and Arvind Narayanan. "Semantics Derived Automatically from Language Corpora Contain Human-Like Biases." *Science*, 2017.
 - Mikolov, Tomas, et al. "Distributed Representations of Words and Phrases and their Compositionality." *NeurIPS*, 2013. (Skip-gram with negative sampling, the training method `implementation.py` uses.)
+
+---
+
+<div align="center">
+
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:18181B,100:3F3F46&height=100&section=footer" width="100%"/>
+
+</div>
