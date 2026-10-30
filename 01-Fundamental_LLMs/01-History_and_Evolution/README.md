@@ -4,6 +4,8 @@
 
 </div>
 
+---
+
 ## 1. What a Language Model Actually Estimates
 
 A language model assigns a probability to a sequence of tokens. Almost every architecture below is doing the same underlying job — factorizing that joint probability autoregressively:
