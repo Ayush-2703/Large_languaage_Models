@@ -1,4 +1,9 @@
-# Scaling Laws and Model Efficiency
+<div align="center">
+
+![Topic: Scaling Laws and Model Efficiency](https://capsule-render.vercel.app/api?type=waving&color=0:18181B,100:3F3F46&height=200&section=header&text=Topic:%20Scaling%20Laws%20and%20Model%20Efficiency&fontSize=25&fontColor=FFFFFF&fontAlignY=38&animation=fadeIn&desc=Large%20Languaage%20Models&descSize=20&descAlignY=62)
+</div>
+
+---
 
 ## 1. The Empirical Claim
 
@@ -57,3 +62,11 @@ The mechanism measured here — more parameters (with proportionally more data, 
 - Kaplan, Jared, et al. "Scaling Laws for Neural Language Models." 2020.
 - Hoffmann, Jordan, et al. "Training Compute-Optimal Large Language Models." 2022.
 - Sanh, Victor, et al. "DistilBERT, a distilled version of BERT: smaller, faster, cheaper and lighter." 2019.
+
+---
+
+<div align="center">
+
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:18181B,100:3F3F46&height=100&section=footer" width="100%"/>
+
+</div>
