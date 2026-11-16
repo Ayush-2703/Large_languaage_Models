@@ -15,7 +15,7 @@
 ---
 
 > **Status: specification, not results.** The five topic folders and this module README exist. Every topic's theory `README.md`, `implementation.py`, `explanation.md` and result image are still to be written and executed. This document is the **experimental charter** for the phase: the questions, the pre-stated hypotheses, the designs, the metrics, and the conditions under which each hypothesis would be counted as wrong. It does not claim results, measured runtimes, or images that do not exist. Every number-shaped cell below reads `not yet run`, and stays that way until `implementation.py` produces it.
-
+ 
 ---
 
 ## Table of Contents
