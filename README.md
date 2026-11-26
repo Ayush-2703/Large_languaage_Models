@@ -21,12 +21,12 @@
 [![Forks](https://img.shields.io/github/forks/Ayush-2703/Large_languaage_Models?style=social)](https://github.com/Ayush-2703/Large_languaage_Models/network/members)
  
 </div>
-Twenty-two topics. Five phases. One free-tier Colab T4 GPU per topic, under an hour each. This is a hands-on curriculum for the full arc of large language models, from the QKV math inside self-attention through RAG pipelines, DPO alignment, and multimodal frontiers. Every topic ships runnable code and a generated proof that it actually ran.
+Twenty-two topics across five phases, covering large language models from self-attention and fine-tuning through RAG, alignment, and multimodal systems. The repository is in progress: use the tracker and each topic folder to see which materials are currently available. Hardware and run time depend on the example.
 
 ## Table of Contents
 
 - [About](#about)
-- [The Four-File Promise](#the-four-file-promise)
+- [Topic Format](#topic-format)
 - [Design Philosophy](#design-philosophy)
 - [Curriculum](#curriculum)
 - [Repository Structure](#repository-structure)
@@ -44,7 +44,7 @@ Twenty-two topics. Five phases. One free-tier Colab T4 GPU per topic, under an h
 
 This repository covers large language models end to end across five phases and twenty-two topics: architectural fundamentals, generative fine-tuning, efficient training and alignment, applied systems like RAG, and where the field is headed next.
 
-It's being built incrementally, phase by phase. The folder skeleton below is complete; the `theory.md`, `implementation.py`, `explanation.md`, and `Image` for each topic ship in subsequent passes, tracked in that folder's own `STATUS.md`.
+The curriculum contains 22 topics across five phases. Topic material is published incrementally; the root progress table below reflects the files currently present. Most topics include a topic README, runnable implementation, and explanation. Some topic materials and generated figures are still missing, so check each folder before planning a complete course run.
 
 Built to the same standard as its companion repository, [`Deep_Learning`](https://github.com/Ayush-2703/Deep_Learning).
 
@@ -54,38 +54,38 @@ Built to the same standard as its companion repository, [`Deep_Learning`](https:
 |---|---|
 | Topics | 22 |
 | Phases | 5 |
-| GPU required | 1 free-tier Colab T4 |
-| Time per topic | Under an hour |
+| Hardware | CPU/GPU requirements vary by topic; see its README |
+| Run time | Depends on the model, data, and hardware |
 | Models used | DistilBERT, BERT-base, GPT-2 / GPT-2-medium, T5-small / FLAN-T5-small, DistilBART, OPUS-MT |
 | Datasets used | IMDB, SST-2, CNN/DailyMail or WMT16 (subsampled), SQuAD |
 
-## The Four-File Promise
+## Topic Format
 
-Most LLM curricula fail in one of two places: all theory and no working code, or a notebook full of `.fit()` calls with no explanation of why any of it works. Every topic folder in this repo has to clear both bars before it counts as done. That means exactly four files, no more and no fewer:
+Topics are intended to connect conceptual background, runnable code, and an explanation. The current repository does not yet use one exact four-file structure for every topic; see the progress tracker and each topic folder for its current contents.
 
 ```mermaid
 flowchart LR
-    A["theory.md<br/>the math"] --> B["implementation.py<br/>the code"]
-    B --> C["explanation.md<br/>the why"]
-    C --> D["Image<br/>the evidence"]
+    A["README.md<br/>concepts and usage"] --> B["implementation.py<br/>the code"]
+    B --> C["explanation.md<br/>the walkthrough"]
+    C --> D["Image/<br/>figures when available"]
 ```
 
 | File | What it answers |
 |---|---|
-| `theory.md` | What's the math, and where does it come from? |
+| `README.md` | What's the topic, and how do I use it? |
 | `implementation.py` | Can I actually run this myself? |
 | `explanation.md` | Why does the code work the way it does? |
-| `Image` | Did it really run, or is this just claimed? |
+| `Image/` | Supporting figures or outputs, when available |
 
-The last one is the strict part. Three topics in this curriculum are conceptual rather than experimental (History and Evolution of Language Models, Ethical Considerations in Large-Scale AI, Emergent Behaviors and Scaling Hypotheses), and even they don't get a pass: `proof.png` for those is a composite figure pairing a conceptual diagram with a real, code-generated comparison chart. Not a static illustration standing in for missing work.
+Figures are supporting material and are not a substitute for checking that code runs. Results should be treated as illustrative unless a topic documents its run environment and reproducibility details.
 
 ## Design Philosophy
 
 | Principle | What it means here |
 |---|---|
-| Runs anywhere, fast | Every `implementation.py` completes on a single free-tier Colab T4 GPU in well under an hour |
+| Practical examples | Implementations aim to use small models and datasets where appropriate; check each topic for hardware and run-time requirements |
 | Small models, full understanding | Hands-on code uses small open checkpoints (DistilBERT, BERT-base, GPT-2 / GPT-2-medium, T5-small / FLAN-T5-small, DistilBART, OPUS-MT) and small public datasets (IMDB, SST-2, CNN/DailyMail or WMT16 subsamples, SQuAD) |
-| Scales conceptually | Every `theory.md` explains how the technique extends to production-scale models, even where the runnable code stays deliberately small |
+| Scales conceptually | Topic READMEs connect small runnable examples to larger systems where relevant |
 | Grounded, not copied | Theory draws on Rothman's and Tunstall et al.'s books plus primary papers: paraphrased throughout, cited by title and author, never block-quoted |
 
 ## Curriculum
@@ -112,60 +112,60 @@ flowchart LR
 
 | # | Topic | Folder |
 |---|---|---|
-| 1 | Principles and Techniques for Fine-Tuning Pretrained Models | [`01-Fine-Tuning-Principles-and-Techniques`](02-Generative-AI-with-LLMs/01-Fine-Tuning-Principles-and-Techniques/) |
-| 2 | Transfer Learning for Domain-Specific Tasks | [`02-Transfer-Learning-for-Domain-Specific-Tasks`](02-Generative-AI-with-LLMs/02-Transfer-Learning-for-Domain-Specific-Tasks/) |
-| 3 | Implementing Fine-Tuning (GPT, BERT, T5) | [`03-Implementing-Fine-Tuning-GPT-BERT-T5`](02-Generative-AI-with-LLMs/03-Implementing-Fine-Tuning-GPT-BERT-T5/) |
-| 4 | Case Studies: Text Summarization, Translation, and Sentiment Analysis | [`04-Case-Studies-Summarization-Translation-Sentiment`](02-Generative-AI-with-LLMs/04-Case-Studies-Summarization-Translation-Sentiment/) |
+| 1 | Principles and Techniques for Fine-Tuning Pretrained Models | [`01-Fine-Tuning-Principles-and-Techniques`](02-Generative_AI_with_LLMs/01-Fine_Tuning_Principles_and_Techniques/) |
+| 2 | Transfer Learning for Domain-Specific Tasks | [`02-Transfer-Learning-for-Domain-Specific-Tasks`](02-Generative_AI_with_LLMs/02-Transfer_Learning_for_Domain_Specific_Tasks/) |
+| 3 | Implementing Fine-Tuning (GPT, BERT, T5) | [`03-Implementing-Fine-Tuning-GPT-BERT-T5`](02-Generative_AI_with_LLMs/03-Implementing_Fine_Tuning/) |
+| 4 | Case Studies: Text Summarization, Translation, and Sentiment Analysis | [`04-Case-Studies-Summarization-Translation-Sentiment`](02-Generative_AI_with_LLMs/04-Case_Studies_Summarization_Translation_Sentiment/) |
 
 ### ⚙️ Phase 03 · Training and Optimization of LLMs
 
 | # | Topic | Folder |
 |---|---|---|
-| 1 | Data Collection and Preprocessing for LLMs | [`01-Data-Collection-and-Preprocessing`](03-Training-and-Optimization-of-LLMs/01-Data-Collection-and-Preprocessing/) |
-| 2 | Efficient Training Strategies: LoRA, QLoRA, Quantization (INT8/NF4), and Pruning | [`02-Efficient-Training-LoRA-QLoRA-Quantization-Pruning`](03-Training-and-Optimization-of-LLMs/02-Efficient-Training-LoRA-QLoRA-Quantization-Pruning/) |
-| 3 | Alignment Methodologies: RLHF & DPO | [`03-Alignment-RLHF-and-DPO`](03-Training-and-Optimization-of-LLMs/03-Alignment-RLHF-and-DPO/) |
-| 4 | Memory and Computational Challenges (Gradient Checkpointing, Flash Attention) | [`04-Memory-and-Computational-Challenges`](03-Training-and-Optimization-of-LLMs/04-Memory-and-Computational-Challenges/) |
+| 1 | Data Collection and Preprocessing for LLMs | [`01-Data-Collection-and-Preprocessing`](03-Training_and_Optimization/01-Data_Collection_and_Preprocessing/) |
+| 2 | Efficient Training Strategies: LoRA, QLoRA, Quantization (INT8/NF4), and Pruning | [`02-Efficient-Training-LoRA-QLoRA-Quantization-Pruning`](03-Training_and_Optimization/02-Efficient_Training/) |
+| 3 | Alignment Methodologies: RLHF & DPO | [`03-Alignment-RLHF-and-DPO`](03-Training_and_Optimization/03-Alignment/) |
+| 4 | Memory and Computational Challenges (Gradient Checkpointing, Flash Attention) | [`04-Memory-and-Computational-Challenges`](03-Training_and_Optimization/04-Memory_and_Computational_Challenges/) |
 
 ### 🧰 Phase 04 · Applications and Use Cases
 
 | # | Topic | Folder |
 |---|---|---|
-| 1 | Introduction to Retrieval-Augmented Generation (RAG) with Vector DBs | [`01-Retrieval-Augmented-Generation-RAG-Vector-DBs`](04-Applications-and-Use-Cases/01-Retrieval-Augmented-Generation-RAG-Vector-DBs/) |
-| 2 | Integrating External Knowledge into LLMs | [`02-Integrating-External-Knowledge-into-LLMs`](04-Applications-and-Use-Cases/02-Integrating-External-Knowledge-into-LLMs/) |
-| 3 | Chain-of-Thought (CoT) Prompting and Few-Shot Learning | [`03-Chain-of-Thought-Prompting-and-Few-Shot-Learning`](04-Applications-and-Use-Cases/03-Chain-of-Thought-Prompting-and-Few-Shot-Learning/) |
-| 4 | Conversational AI, Chatbots, and Knowledge Extraction | [`04-Conversational-AI-Chatbots-Knowledge-Extraction`](04-Applications-and-Use-Cases/04-Conversational-AI-Chatbots-Knowledge-Extraction/) |
+| 1 | Introduction to Retrieval-Augmented Generation (RAG) with Vector DBs | [`01-Retrieval-Augmented-Generation-RAG-Vector-DBs`](04-Applications_and_Use_Cases/01-RAG_Vector_DBs/) |
+| 2 | Integrating External Knowledge into LLMs | [`02-Integrating-External-Knowledge-into-LLMs`](04-Applications_and_Use_Cases/02-Integrating_External_Knowledge/) |
+| 3 | Chain-of-Thought (CoT) Prompting and Few-Shot Learning | [`03-Chain-of-Thought-Prompting-and-Few-Shot-Learning`](04-Applications_and_Use_Cases/03-Chain_of_Thought_Prompting_and_Few_Shot_Learning/) |
+| 4 | Conversational AI, Chatbots, and Knowledge Extraction | [`04-Conversational-AI-Chatbots-Knowledge-Extraction`](04-Applications_and_Use_Cases/04-AI_Chatbots_Knowledge_Extraction/) |
 
 ### 🔭 Phase 05 · Frontiers and Future of LLMs
 
 | # | Topic | Folder |
 |---|---|---|
-| 1 | Emergent Behaviors and Scaling Hypotheses | [`01-Emergent-Behaviors-and-Scaling-Hypotheses`](05-Frontiers-and-Future-of-LLMs/01-Emergent-Behaviors-and-Scaling-Hypotheses/) |
-| 2 | Multilingual and Cross-lingual Capabilities | [`02-Multilingual-and-Cross-lingual-Capabilities`](05-Frontiers-and-Future-of-LLMs/02-Multilingual-and-Cross-lingual-Capabilities/) |
-| 3 | LLMs in Low-Resource Settings | [`03-LLMs-in-Low-Resource-Settings`](05-Frontiers-and-Future-of-LLMs/03-LLMs-in-Low-Resource-Settings/) |
-| 4 | Alignment and Controllability of LLMs | [`04-Alignment-and-Controllability-of-LLMs`](05-Frontiers-and-Future-of-LLMs/04-Alignment-and-Controllability-of-LLMs/) |
-| 5 | Beyond Text: LLMs in Robotics, Vision-Language Models, and Decision-Making | [`05-Beyond-Text-Robotics-Vision-Language-Decision-Making`](05-Frontiers-and-Future-of-LLMs/05-Beyond-Text-Robotics-Vision-Language-Decision-Making/) |
+| 1 | Emergent Behaviors and Scaling Hypotheses | [`01-Emergent-Behaviors-and-Scaling-Hypotheses`](05-Frontiers_and_Future_of_LLMs/01-Emergent_Behaviors_and_Scaling_Hypotheses/) |
+| 2 | Multilingual and Cross-lingual Capabilities | [`02-Multilingual-and-Cross-lingual-Capabilities`](05-Frontiers_and_Future_of_LLMs/02-lingual_Capabilities/) |
+| 3 | LLMs in Low-Resource Settings | [`03-LLMs-in-Low-Resource-Settings`](05-Frontiers_and_Future_of_LLMs/03-Low_Resource_Settings/) |
+| 4 | Alignment and Controllability of LLMs | [`04-Alignment-and-Controllability-of-LLMs`](05-Frontiers_and_Future_of_LLMs/04-Alignment_and_Controllability/) |
+| 5 | Beyond Text: LLMs in Robotics, Vision-Language Models, and Decision-Making | [`05-Beyond-Text-Robotics-Vision-Language-Decision-Making`](05-Frontiers_and_Future_of_LLMs/05-Beyond_Text_Robotics_Vision_Language_Decision_Making/) |
 
 ## Repository Structure
 
 ```
-llm-mastery/
+Large_languaage_Models/
 ├── README.md
 ├── requirements.txt
 ├── .gitignore
 ├── LICENSE
-├── 01-Review-of-Fundamental-LLMs/
-├── 02-Generative-AI-with-LLMs/
-├── 03-Training-and-Optimization-of-LLMs/
-├── 04-Applications-and-Use-Cases/
-└── 05-Frontiers-and-Future-of-LLMs/
+├── 01-Fundamental_LLMs/
+├── 02-Generative_AI_with_LLMs/
+├── 03-Training_and_Optimization/
+├── 04-Applications_and_Use_Cases/
+└── 05-Frontiers_and_Future_of_LLMs/
 ```
 
-Each phase folder contains its own topic folders, numbered `01`, `02`, … starting fresh within that phase. Every topic folder holds exactly the four files described above:
+Each phase folder contains numbered topic folders. The common files are a topic `README.md`, `implementation.py`, and `explanation.md`; supporting images and result files vary by topic:
 
 ```
 03-Training-and-Optimization-of-LLMs/
 └── 02-Efficient-Training-LoRA-QLoRA-Quantization-Pruning/
-    ├── theory.md           # Math intuition, architecture breakdown, citations
+    ├── README.md           # Topic concepts and usage
     ├── implementation.py   # Runnable PyTorch + Hugging Face code
     ├── explanation.md      # Line-by-line walkthrough of the code's why and what
     └── Image               # Generated artifact proving the code ran end to end
@@ -174,50 +174,50 @@ Each phase folder contains its own topic folders, numbered `01`, `02`, … start
 ## Scope Notes
 
 > [!NOTE]
-> Standalone Flash Attention kernels need Ampere-class GPUs or newer, so they won't run on a T4. That topic demonstrates PyTorch's built-in scaled-dot-product-attention backend instead, with the dedicated kernel covered conceptually in `theory.md`.
+> Standalone Flash Attention kernels need Ampere-class GPUs or newer, so they won't run on a T4. Check the memory and computational challenges topic README for the implementation's actual backend and hardware requirements.
 >
-> Full RLHF (reward model plus PPO rollouts) is too heavy for a sub-hour Colab run as well. The hands-on code for Alignment is DPO, with RLHF and PPO covered conceptually alongside it.
+> Full RLHF (reward model plus PPO rollouts) can be expensive to run. Check the Alignment topic README for the exact hands-on scope and hardware requirements.
 
 ## Getting Started
 
 ```bash
-git clone https://github.com/Ayush-2703/Large_Language_Models.git
-cd Large_language_models
+git clone https://github.com/Ayush-2703/Large_languaage_Models.git
+cd Large_languaage_Models
 python -m venv venv
 source venv/bin/activate        # Windows: venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
 > [!TIP]
-> **Running on Google Colab:** open a new notebook, set the runtime to a T4 GPU, then either clone this repo with `!git clone` or upload a single topic's `implementation.py` and run `!pip install -r requirements.txt` in the first cell. Every script is self-contained per topic. No cross-topic imports.
+> **Running on Google Colab:** clone this repository or open a topic implementation in a notebook. Review that topic's README for its dependencies, data downloads, and hardware requirements before running it.
 
 ## Progress Tracker
 
 | Phase | Topics | Completed | Progress |
 |---|---|---|---|
-| 01 · Review of Fundamental LLMs | 5 | 5 | **100%** |
-| 02 · Generative AI with LLMs | 4 | 4 | **100%** |
-| 03 · Training and Optimization of LLMs | 4 | 4 | **100%** |
-| 04 · Applications and Use Cases | 4 | 4 | **100%** |
-| 05 · Frontiers and Future of LLMs | 5 | 5 | **100%** |
-| **Total** | **22** | **22** | **100%** |
+| 01 · Fundamental LLMs | 5 | 5 | 5/5 have README, implementation, and explanation |
+| 02 · Generative AI with LLMs | 4 | 3 | 3/4 have README, implementation, and explanation |
+| 03 · Training and Optimization | 4 | 4 | 4/4 have README, implementation, and explanation |
+| 04 · Applications and Use Cases | 4 | 4 | 4/4 have README, implementation, and explanation |
+| 05 · Frontiers and Future | 5 | 5 | 5/5 have README, implementation, and explanation |
+| **Total** | **22** | **21** | **21/22 have the three core files** |
 
-Each topic's folder-level status lives in its own `STATUS.md`, updated as that topic's four files ship.
+The counts describe file presence, not execution or completeness of the scientific content. Phase 02, topic 04 currently has a README only.
 
 ## Who This Is For
 
 - You're comfortable with Python and have touched PyTorch, but self-attention has always been something you nodded along to rather than derived by hand.
 - You want to say you've implemented LoRA, DPO, and a RAG pipeline, not just read a blog post about them.
-- You don't have access to an A100 cluster. A free Colab T4 is what you've got, and that's what every topic here is built for.
+- You want to learn with practical examples and can adapt the hardware to the requirements listed for each topic.
 - You'd rather work through 22 focused topics with real, runnable code than sit through 22 hours of lecture slides.
 
 ## References
 
 - Rothman, Denis. *Transformers for Natural Language Processing*
 - Tunstall, Lewis, Leandro von Werra, and Thomas Wolf. *Natural Language Processing with Transformers*
-- Primary papers are cited individually, by title and author, inside each topic's `theory.md`
+- Primary papers are cited in topic materials where available
 
-Every `theory.md` in this repo paraphrases from these directly, with citations. Nothing is block-quoted.
+Check the individual topic README and explanation for its references.
 
 ---
 ## 📜 License
@@ -252,3 +252,4 @@ Building practical ML systems with careful evaluation and clear, reproducible en
 <img src="https://capsule-render.vercel.app/api?type=waving&color=0:0f0c29,50:302b63,100:0891B2&height=100&section=footer" width="100%"/>
 
 </div>
+
